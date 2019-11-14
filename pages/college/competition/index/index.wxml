@@ -1,0 +1,37 @@
+<!--pages/college/competition/index/index.wxml-->
+<!-- 头 -->
+<view class="main-block">
+  <view class="main">
+  <view>
+    <view class="nav1">
+      <image  class="xiaohui" src="{{college_img}}"></image>
+      <view class="collageName">{{collage}}</view>
+    </view>
+  </view>
+  <view class="nav-line"></view>
+  <view class="nav2">
+    <view class="nav2-content1">{{content1}}</view>
+    <view class="nav2-content2">{{content2}}</view>
+  </view>
+</view>
+</view>
+
+<!-- 每个项目 -->
+<view>
+  <template is="pro" data="{{...item}}"/>
+  <template is="pro" data="{{...item}}"/>
+  <template is="pro" data="{{...item}}"/>
+</view>
+
+
+<!-- 定义项目模板 -->
+<template name="pro">
+  <view class="project">
+    <image src="{{src}}" class="proImage"  bindtap="detail"></image>
+    <view class="protext" bindtap="detail">
+      <view class="protext1">{{protext1}}</view>
+      <view class="protext2">{{protext2}}</view>
+      <view class="proline"></view>
+    </view>
+  </view>
+</template>

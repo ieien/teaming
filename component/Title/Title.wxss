@@ -1,0 +1,14 @@
+
+.swiper{
+  width: 100%;
+  height:350rpx;
+}
+.slide{
+  width: 100%;
+  height: 300rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 350rpx;
+
+}

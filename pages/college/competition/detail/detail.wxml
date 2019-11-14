@@ -1,0 +1,32 @@
+<!--pages/college/competition/detail/detail.wxml-->
+<view class="main">
+<view  class="first_block">
+<!-- 分隔符 -->
+<view class="nav-item">
+<view class="second_block">
+  <image src="{{bagImg}}"></image>
+</view>
+
+  <view class="third_block">
+  <image class="nav1-img" src="{{navImg}}"></image>
+  <view class="nav2">
+      <view class="nav2-item1">{{navName}}</view>
+      <view class="nav2-item2">{{navPro}}</view>
+  </view>
+  </view>
+
+
+</view>
+<!-- 分隔符 -->
+<view class="com-text">
+<text>{{content}}</text>
+</view>
+</view>
+
+<!-- 这里写一些notice -->
+<view>
+<notice></notice>
+</view>
+
+</view>
+

@@ -1,0 +1,79 @@
+<!--pages/detail/index.wxml-->
+<view class="page">
+  <view class="frist_box">
+    <view class="title">{{title}}</view>
+    <view class="box">
+
+      <view class="Personal_information">
+        <navigator url="{{text}}" hover-class="none">
+          <image class="touxiang" src="{{touxiang}}"></image>
+        </navigator>
+        <navigator url="{{text}}"  hover-class="none">
+          <view class="name">{{name}}</view>
+        </navigator>
+        <navigator url="{{text}}" hover-class="none">
+        <veiw class="grade">{{grade}}</veiw>
+        </navigator>
+      </view>
+        
+      <view class="Competition_information">
+        <navigator url="{{text}}" hover-class="none">
+        <image class="bisai" src="{{bisai}}"></image>
+        </navigator>
+        
+        <navigator url="{{text}}" hover-class="none">
+        <view class="match">{{match}}</view>
+        </navigator>
+        
+        <navigator url="{{text}}" hover-class="none">
+        <view class="matchtype">{{matchtype}}</view>
+        </navigator>
+        
+      </view>
+        
+    </view>
+  </view>
+
+  <view class="second_box">
+    <view class="number">
+      <image class="ren" src="{{ren}}"></image>
+      <view class="Current_population">当前人数：{{number}}人</view>
+    </view>
+
+    <view class="state">
+      <image class="zhuangtai" src="{{zhuangtai}}"></image>
+      <view class="Project_status">{{state}}</view>
+    </view>
+
+    <view class="college">
+      <image class="xueyuan" src="{{xueyuan}}"></image>
+      <view class="Current_college">意向学院：{{college}}</view>
+    </view>
+  </view>
+
+  <view class="third_box">
+    <view class="expression">详细表达/Detail expression</view>
+
+    <view class="content">
+
+      <scroll-view class="scroll_content" scroll-y="true"  bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        {{content_expression}}
+            <!-- <text class="content_expression" >{{content_expression}}</text> -->
+      </scroll-view>
+    </view>
+    <view class="time">{{time}}</view>
+
+    <view class="bottom">
+      <view class="zhichi">
+        <image class="zhichi_image" src="{{zhichi}}" bindtap="ding"></image>
+        <view class="zhichi_font" bindtap="ding">顶他上去</view>
+      </view>
+
+      <view class="jubao">
+        <image class="jubao_image" src="{{jubao}}" bindtap="jubao"></image>
+        <view class="jubao_font" bindtap="jubao">举报</view>
+      </view>
+    </view>
+  </view>
+
+</view>

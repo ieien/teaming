@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "NCHU-Teaming",
+  "usingComponents": {
+    "Title": "../../component/Title/Title",
+    "searchbar": "../../component/search_bar/searchbar",
+    "sort": "../../component/sort_bar/sort",
+    "notice": "../../component/notice/notice"
+  }
+}

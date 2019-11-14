@@ -1,0 +1,49 @@
+{
+    "pages": [
+      "pages/index/index",
+      "pages/publish/index/index",
+      "pages/publish/add/add",
+      "pages/college/index/index",
+      "pages/detail/index",
+      "pages/college/competition/detail/detail",
+      "pages/college/competition/index/index",
+      "pages/user/index/index",
+      "pages/user/userDetails/userDetails",
+      "pages/user/updateUserInfo/updateUserInfo",
+      "pages/user/userGuide/userGuide",
+      "pages/user/feedback/feedback",
+      "pages/user/about/about"
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#4281A4",
+      "navigationBarTitleText": "NCHU-Teaming",
+      "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+      "color": "green",
+      "selectedColor": "green",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "首页",
+          "iconPath": "image/home.png",
+          "selectedIconPath": "image/home_live.png"
+        },
+        {
+          "pagePath": "pages/publish/index/index",
+          "text": "发布",
+          "iconPath": "image/_search.png",
+          "selectedIconPath": "image/d_search.png"
+        },
+        {
+          "pagePath": "pages/user/index/index",
+          "text": "用户",
+          "iconPath": "image/user.png",
+          "selectedIconPath": "image/d_user.png"
+        }
+      ]
+    }
+  }

@@ -1,0 +1,42 @@
+/* pages/user/userGuide/userGuide.wxss */
+.border{
+  position: absolute;
+  left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+background-color: rgba(229, 229, 229, 1);
+}
+.view1{
+  position: absolute;
+  left: 0px;
+top: 15px;
+width: 250px;
+height: 27px;
+color: rgba(16, 16, 16, 1);
+font-size: 20px;
+text-align: left;
+font-family: SourceHanSansSC-regular;
+}
+.line{
+  position: absolute;
+  left: 0px;
+top: 57px;
+background:rgba(16, 16, 16, 1);
+ width: 100%;
+ height: 5px;
+}
+.view2{
+  position: absolute;
+  left: 10px;
+top: 73px;
+width: 340px;
+height: 484px;
+background-color: rgba(255, 255, 255, 1);
+line-height: 23px;
+color: rgba(34, 33, 33, 1);
+font-size: 16px;
+text-align: left;
+font-family: Microsoft Yahei;
+border: 1px solid rgba(187, 187, 187, 1);
+}

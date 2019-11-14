@@ -1,0 +1,126 @@
+/* pages/user/index/index.wxss */
+.touxiang {
+  position: absolute;
+  left: 7px;
+  top: 14px;
+  width: 67px;
+  height: 67px;
+  overflow:hidden;  
+  display: block;  
+  border-radius: 50%;  
+  border: 2px solid #fff;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+} 
+.nickname{
+  position: absolute;
+ left: 81px;
+top: 20px;
+width: 120px;
+height: 20px;
+color: rgba(0, 0, 0, 1);
+font-size: 20px;
+text-align: left;
+font-family: 方正楷体-标准;
+}
+.view1{
+  position: absolute;
+   left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+background-color: rgba(223, 221, 218, 1);
+   
+}
+.tongzhi{
+  position: absolute;
+ left: 323px;
+top: 14px;
+width: 35px;
+height: 35px;
+}
+
+.ziliao{
+position: absolute;
+left: 12px;
+width: 24px;
+height: 24px;
+}
+.wenben{
+  position: absolute;
+  left: 50px;
+}
+.jiantou{
+  position: absolute;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+}
+.a1{
+  top: 133px;
+}
+.a2{
+  top:191px;
+}
+.a3{
+  top: 237px;
+}
+.a4{
+  top: 288px;
+}
+.a5{
+  top:351px;
+}
+.bg{
+  position: absolute;
+  left: 0px;
+
+width: 100%;
+
+line-height: 20px;
+color: rgba(16, 16, 16, 1);
+background-color: rgba(255, 255, 255, 1);
+font-size: 14px;
+text-align: center;
+box-shadow: 0px 0px 2px 0px rgba(170, 170, 170, 1);
+font-family: Roboto;
+}
+.c1{
+  top: 0px;
+  height: 114px;
+}
+.c2{
+   top:121px;
+   height: 50px;
+}
+.c3{
+   top: 178px;
+   height: 155px;
+}
+.c4{
+   top: 340px;
+   height: 50px;
+}
+.academy{
+  position: absolute;
+  left: 81px;
+top: 59px;
+width: 100%;
+height: 20px;
+color: rgba(0, 0, 0, 1);
+font-size: 14px;
+text-align: left;
+font-family: SourceHanSansSC-regular;
+}
+.line{
+position: absolute;
+left: 50px;
+width: 100%;
+height: 1px;
+border: 0.5px solid rgba(187, 187, 187, 1);
+}
+.l1{
+  top: 224px;
+}
+.l2{
+  top:272px;
+}

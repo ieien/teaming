@@ -1,0 +1,4 @@
+/**index.wxss**/
+.main{
+  background-color:rgba(223, 221, 218, 1);
+}

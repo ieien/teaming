@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "sort": "/component/sort_bar/sort",
+    "notice": "/component/notice/notice"
+  },
+  "enablePullDownRefresh": true
+}

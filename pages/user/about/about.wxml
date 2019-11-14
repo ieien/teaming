@@ -1,0 +1,8 @@
+<!--pages/user/about/about.wxml-->
+<view class="view1"></view>
+<image class="img" src="../../../image/aboutus.jpg"></image>
+<textarea class="view2" value="我们为什么要做这个软件"></textarea>
+<view class="view3">版本号</view>
+<textarea class="view4" value="吧啦吧啦"></textarea>
+<view class="view5">团队介绍</view>
+<textarea class="view6" value="bbbbbbbb....."></textarea>

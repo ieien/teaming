@@ -1,0 +1,10 @@
+
+<!-- 滚动图 -->
+<swiper class="swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="key">
+    <swiper-item class="slide">
+      <image src="{{item}}" class="slide-image" mode='aspectFill' width="100%" height="150rpx"/>
+    </swiper-item>
+  </block>
+</swiper>

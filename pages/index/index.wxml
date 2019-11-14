@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="main">
+<!-- 公共头部 -->
+  <searchbar> </searchbar>
+  <Title></Title>
+
+  <view class="set">
+  <notice></notice>
+  </view>
+
+  <!-- 这里写了滚动区域 -->
+  <view  style="display:{{show}};flex-direction: row;">
+    <sort></sort>
+  </view>
+  <!-- 这里写了滚动区域 -->
+</view>

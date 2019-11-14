@@ -1,0 +1,27 @@
+<!--pages/publish/add/add.wxml-->
+<text class="lo-1">首先，来填写一些相关信息吧！</text>
+<view class="line-1"></view>
+<view class="line-3"></view>
+<text class="people">目前人数：</text>
+ <view class="page-section">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" type="number" maxlength="1" auto-focus placeholder="目前人数" />
+      </view>
+    </view>
+  </view>
+<text class="bi-sai">赛事名称：</text>
+<select class="down" prop-array='{{selectArray}}'></select>
+<text class="yi-xiang">意向学院：</text>
+<select class="xue-yuan" prop-array='{{peopleArray}}'></select>
+<view class="line-2"></view>
+<text class="tit">标题/Title</text>
+<view class="section-tit">
+  <textarea maxlength="50" bindblur="bindTextAreaBlur" style="height: 4em" placeholder="简单讲解你的需求，50字以内" />
+</view>
+<text class="di">详细介绍/Detailed expression</text>
+<view class="section-di">
+  <textarea maxlength="50" bindblur="bindTextAreaBlur" style="height: 8em" placeholder="详细的描述你的项目以及你需要什么样的队友,300字以内" />
+</view>
+<button class="an-niu" type="primary" plain="{{false}}"> 确认发布 </button>
+

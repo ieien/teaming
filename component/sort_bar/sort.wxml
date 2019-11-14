@@ -1,0 +1,23 @@
+<!-- 这里用来写下面的滚动页面 -->
+
+<view class="nav_wrap" >
+
+<view class="Nchu {{currentSelect=='NCHU'?'active':''}}" bindtap="selectNCHU" data-id='NCHU'>
+<image src="../../image/Nchu.png" mode="widthFix"></image>
+<text>NCHU</text>
+</view>
+<!-- 这里写的是滚动图 -->
+<view>
+<scroll-view class="nav" scroll-x>
+<view bindtap="activeNav" data-index="{{index}}" class="nav_item {{index==currentindex?'active':''}}" wx:for="{{nav_list}}" wx:key="{{index}}">
+
+
+<view class="nav_display" bindtap="college">
+<image src="{{item.image}}"  mode="widthFix"  ></image>
+<text>{{item.text}}</text>
+</view>
+
+</view>
+</scroll-view>
+</view>
+</view>

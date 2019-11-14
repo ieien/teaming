@@ -1,0 +1,144 @@
+/* pages/publish/index/index.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.container{
+  padding :0rpx;
+  background-color: rgba(229, 229, 229, 1);
+}
+.pro-label{
+overflow: hidden;
+}
+.label-1{
+  float: top;
+  color: rgb(141, 138, 138);
+  width: 280rpx;
+  height: 50rpx;
+  margin-right: 470rpx;
+}
+.label-2{
+  color:#aaa;
+  font-size: 27rpx; 
+  float: left;
+  margin-left: 460rpx;
+  position: absolute;
+  top: 8rpx;
+  left: 20rpx;
+}
+/* .pro-text{
+  color:rgba(155, 149, 149, 1);
+} */
+.delate{
+  width: 52rpx;
+  height: 53rpx;
+  float: left;
+  margin-left:692rpx;
+  position: absolute;
+  top: 0rpx;
+}
+.divLine{
+ background: rgba(7, 7, 7, 0.541);
+ width: 100%;
+ height: 1rpx;
+  position: absolute;
+  top: 50rpx;
+}
+
+.group{
+  position: absolute;
+  top: 8rpx;
+  right: 8rpx;
+}
+
+.logo-1{
+overflow: hidden;
+padding: 20rpx;
+background-color: white;
+border-radius: 10px 10px 10px 10px;
+border: 1px solid rgba(187, 187, 187, 1);
+height: 160rpx;
+width: 100%;
+margin-top: 8px;
+}
+.pro-logo{
+  float: left;
+  width: 140rpx;
+  height: 140rpx;
+}
+.pro-miaoshu{
+  height: 65px;
+  margin-left: 24%;
+}
+.pro-title{
+  color: #212121;
+  font-size: 34rpx;
+  line-height: 1;
+  width: 450rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+.pro-text1{
+  float:left;
+   color:rgba(155, 149, 149, 1);
+  font-size: 24rpx;
+  line-height: 1.2;
+}
+.pro-text2{
+  float:left;
+   color:rgba(155, 149, 149, 1);
+  font-size: 24rpx;
+  line-height: 1.2;
+  padding-left: 10rpx;
+}
+.pro-text3{
+  float:left;
+ color:rgba(155, 149, 149, 1);
+  font-size: 26rpx;
+  line-height: 1.2;
+  padding-left: 30rpx;
+}
+.pro-button{
+  position: relative;
+  overflow: hidden;
+  float: right;
+  width: 52rpx;
+  height: 53rpx;
+  bottom: 50rpx;
+}
+.pro-img{
+  float: right;
+  width: 55rpx;
+  height:55rpx;
+}
+.fa{
+position:fixed;
+left: 600rpx;
+/* top: 900rpx; */
+bottom: 200rpx;
+width: 70rpx;
+height: 70rpx;
+}
+.fa-bu{
+width:115rpx;
+height:115rpx;
+}
+page {
+  background: #F3F3F3;
+}
