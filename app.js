@@ -19,8 +19,10 @@ App({
       tel: '', //电话
       introduction: ''  //个人简介
     },
-
-    collegeList: [],  //学院列表
+    //学院列表，对象数组，[{college_id, college_name}, {} ...]
+    collegeList: [],  
+    //是否已经注册，网络延迟原因，检测到用户已注册后更新此值有延迟（时间大于页面onLoad）
+    isRegistered: false
   },
 
   /**
@@ -59,6 +61,7 @@ App({
                 that.globalData.userInfo.weixin = res.data.data.userInfo.weixin;
                 that.globalData.userInfo.tel = res.data.data.userInfo.tel;
                 that.globalData.userInfo.introduction = res.data.data.userInfo.user_introduction;
+                that.globalData.isRegistered = true;
                 //测试输出
                 console.log(that.globalData.userInfo);
                 //若用户还没注册
@@ -67,6 +70,7 @@ App({
                 wx.showModal({
                   title: '欢迎来到Teaming',
                   content: '您还未注册哦，先去完善信息吧',
+                  showCancel: false,  //不显示取消按钮，只能确定
                   success(res) {
                     if (res.confirm) {
                       //console.log('用户点击确定')
@@ -74,9 +78,7 @@ App({
                       wx.navigateTo({
                         url: '../user/updateUserInfo/updateUserInfo?id=1&is_sign_up=true',
                       })
-                    } else if (res.cancel) {
-                      console.log('用户点击取消')
-                    }
+                    } 
                   }
                 })//
               }
@@ -106,7 +108,7 @@ App({
         //状态码为零，表示成功取得数据
         if (res.data.code === 0) {
           that.globalData.collegeList = res.data.data;
-          //console.log(that.globalData.collegeList); //测试输出
+          console.log(that.globalData.collegeList); //测试输出
         } else {
           console.log("学院数据获取失败");
         }
