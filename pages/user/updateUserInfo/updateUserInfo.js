@@ -16,11 +16,10 @@ Page({
   },
 
   /**
-   * 更新用户信息（将用户信息上传至服务器）
+   * 更新用户信息。参数：userInfo，从表单中获取的用户信息对象
+   * 将发布的信息上传至服务器，并判断是否提交成功
    */
   updateUserInfo: function (userInfo) {
-    //var that = this;
-    //var app = getApp(); //获取全局实例对象
 
     wx.request({
       url: 'https://teaming.malateam.cn/src/update_user_info.php',
@@ -93,7 +92,7 @@ Page({
     this.updateUserInfo(e.detail.value);
 
   },
-
+  
   /**
    * 表单重置
    */
@@ -101,7 +100,10 @@ Page({
     //测试输出
     //console.log('form发生了reset事件')
   },
-  //普通选择器触发事件，选择改变时自动触发改变e.detail.value的值
+
+  /**
+   * 普通选择器触发事件，选择改变时自动触发改变e.detail.value的值
+   */
   bindPickerChange: function (e) {
     //测试输出
     //console.log('picker发送选择改变，携带值为', e.detail.value)

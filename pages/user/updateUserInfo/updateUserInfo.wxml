@@ -37,10 +37,10 @@
   <!-- 选择学院，普通选择器 -->
   <view class="section">
     <view class="section__title">学院：</view>
-    <picker  bindchange="bindPickerChange" value="{{index}}" range="{{collegeList}}" range-key="college_name">
-      <view >{{collegeList[index].college_name}}</view>
+    <picker  bindchange="bindPickerChange" value="{{index}}" range="{{collegeList}}" range-key="name">
+      <view >{{collegeList[index].name}}</view>
       <!-- input不显示，只为向js提交数据 -->
-      <input name="college" hidden="false" value="{{collegeList[index].college_name}}"/>  
+      <input name="college" hidden="false" value="{{collegeList[index].name}}"/>  
     </picker>
   </view>
 

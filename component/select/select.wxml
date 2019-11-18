@@ -1,12 +1,12 @@
 <!--Componet/select/select.wxml-->
-<!-- 下拉框选择组件 -->
+<!-- 下拉框选择组件，下拉框中是一个对象数组，[{id, name},...] -->
 <view class='com-selectBox'>
     <view class='com-sContent' bindtap='selectToggle'>
         <view class='com-sTxt'>{{nowText}}</view>
         <image src='{{down_img}}'  class='com-sImg'  animation="{{animationData}}"></image>
     </view>
     <view class='com-sList' wx:if="{{selectShow}}">
-        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='setText'>{{item.text}}</view>
+        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='setText'>{{item.name}}</view>
     </view>
     
 </view>

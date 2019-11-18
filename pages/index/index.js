@@ -1,7 +1,7 @@
 //index.js
 //小程序主页
 
-const app = getApp();
+
 
 Page({
   data: {
@@ -13,21 +13,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("onLoad" + app.globalData.isRegistered);
+    //console.log("onLoad");
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log("onReady" + app.globalData.isRegistered);
+    //console.log("onReady");
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log("onShow" + app.globalData.isRegistered);
+   // console.log("onShow");
 
   },
 
@@ -35,6 +36,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    //console.log("onHide");
 
   },
 
@@ -42,6 +44,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    //console.log("onUnload");
 
   },
 

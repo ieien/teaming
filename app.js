@@ -19,7 +19,7 @@ App({
       tel: '', //电话
       introduction: ''  //个人简介
     },
-    //学院列表，对象数组，[{college_id, college_name}, {} ...]
+    //学院列表，对象数组，[{id, name}, {} ...]
     collegeList: [],  
     //是否已经注册，网络延迟原因，检测到用户已注册后更新此值有延迟（时间大于页面onLoad）
     isRegistered: false
@@ -76,7 +76,7 @@ App({
                       //console.log('用户点击确定')
                       //跳转到完善信息界面
                       wx.navigateTo({
-                        url: '../user/updateUserInfo/updateUserInfo?id=1&is_sign_up=true',
+                        url: '/pages/user/updateUserInfo/updateUserInfo?id=1&is_sign_up=true',
                       })
                     } 
                   }

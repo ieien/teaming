@@ -128,16 +128,15 @@ margin-top: 8px;
   height:55rpx;
 }
 .fa{
-position:fixed;
-left: 600rpx;
-/* top: 900rpx; */
-bottom: 200rpx;
-width: 70rpx;
-height: 70rpx;
+  position: fixed;
+  right: 150rpx;
+  bottom: 150rpx;
+  width: 70rpx;
+  height: 70rpx;
 }
 .fa-bu{
-width:115rpx;
-height:115rpx;
+  width:115rpx;
+  height:115rpx;
 }
 page {
   background: #F3F3F3;

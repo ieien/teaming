@@ -1,3 +1,6 @@
+/**
+ * 获取日期和时间
+ */
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -8,6 +11,16 @@ const formatTime = date => {
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
+/**
+ * 获取日期和时间
+ */
+const formatDate = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+
+  return [year, month, day].map(formatNumber).join('-')
+}
 
 const formatNumber = n => {
   n = n.toString()
@@ -15,5 +28,6 @@ const formatNumber = n => {
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  formatDate: formatDate
 }
