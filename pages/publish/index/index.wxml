@@ -4,7 +4,7 @@
   <view class="pro-1">
 
     <!-- 列表项 -->
-    <view class="logo-1" wx:for="{{proList}}" >
+    <view class="logo-1" wx:for="{{myPublicList}}" wx:key="">
       <!-- 左边的大图标 -->
       <image class="pro-logo" src= "{{book_img}}"></image>
       <!-- 单项中的内容 -->
@@ -13,9 +13,10 @@
         <view class="pro-title">{{item.title}}</view>
         <!-- 点击量、支持量、状态 -->
         <view class="pro-text">
-          <text class="pro-text1">点击量：{{item.text1}}</text>
-          <text class="pro-text2">支持量：{{item.text2}}</text>
-          <text class="pro-text3">{{item.text3}}</text>
+          <text class="pro-text1">点击量：{{item.views}}</text>
+          <text class="pro-text2">支持量：{{item.likes}}</text>
+          <text class="pro-text3" wx:if="{{item.remain_time > 0}}">公示中</text>
+          <text class="pro-text3" wx:else>已过期</text>
         </view>
         <!-- 右边的详情按钮 -->
         <view class="pro-button">
