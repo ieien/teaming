@@ -4,125 +4,58 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    // 要显示的数据：对象数组，[{id, name, logo}, {}, ...]
+    collegeList: {
+      type: Array
+    },
+    // 要显示的目标，值建议设为调用组件时传过来的数组名(propArray属性的数组名)
+    //target: {
+      //type: String,
+   // }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    currentSelect:"NCHU",
-    currentindex:-1,
-    left: 0,
-    nav_list:[
-      {
-        text: "材料科学与工程学院",
-        image:"../../image/cl.png",
-       "url": "",
-       },
-      {
-        text:"信息工程学院",
-        image: "../../image/xg.png",
-        "url": "",},
-      {
-        text: " 数学与信息科学学院",
-        image: "../../image/sx.png",
-        "url": "",
-      },
-      {
-        text: "体育学院",
-        image: "../../image/ty.png",
-        "url": "",
-      },
-      {
-        text:"软件学院",
-        image: "../../image/rj.png",
-        "url": "",},
-      {
-        text: "环境与化学工程学院",
-        image: "../../image/hh.png",
-        "url": "",
-      },
-      {
-        text: "外国语学院",
-        image: "../../image/wy.png",
-        "url": "",
-      },
-      {
-        text: "测试与光电工程学院",
-        image: "../../image/cg.png",
-        "url": "",
-      },
-      {
-        text: "土木建筑学院",
-        image: "../../image/tm.png",
-        "url": "",
-      },
-      {
-        text: "文法学院",
-        image: "../../image/wf.png",
-        "url": "",
-      },
-      {
-        text: "国际教育学院",
-        image: "../../image/gj.png",
-        "url": "",
-      },
-      {
-        text: "航空制造工程学院",
-        image: "../../image/hz.png",
-        "url": "",
-      },
-      {
-        text: "飞行器工程学院",
-        image: "../../image/fxq.png",
-        "url": "",
-      },
-      {
-        text: "经济管理学院",
-        image: "../../image/jg.png",
-        "url": "",
-      },
-      {
-        text: "艺术与设计学院",
-        image: "../../image/ys.png",
-        "url": "",
-      },
-      {
-        text: "音乐学院",
-        image: "../../image/yy.png",
-        "url": "",
-      },
-      {
-        text: "通航学院",
-        image: "../../image/th.png",
-        "url": "",
-      }
-      ]
+    //currentSelect:"NCHU",
+    currentindex: -1,
+    //left: 0,
+    //nav_list: []
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+
+    //获取被选择的学院的数组下标
     activeNav(e){
-    this.setData(
-      // console.log(e.currentTarget.dataset.index)
-     {currentindex:e.currentTarget.dataset.index,
-      currentSelect:"",
-     }
-      )
-    },
-    selectNCHU: function (e) {
+      //console.log(e)
       this.setData({
-        currentSelect: e.currentTarget.dataset.id,
-        currentindex:-1,
+        currentindex: e.currentTarget.dataset.index,
+      })
+      console.log("当前索引  "+ this.data.currentindex)
+    },
+
+    //跳转到主页
+    selectNCHU: function (e) {
+      wx.switchTab({
+        url: '/pages/index/index',
       })
     },
-    college() {
+
+    //监听点击事件，然后关闭当前页面，跳转到另一学院页面
+    college: function(e) {
+      var index = this.data.currentindex; //当前下标
+      var college = this.properties.collegeList; //学院列表
+      var beSelectCollege = college[index]; //被选择的学院
+      console.log(beSelectCollege.id +" "+ beSelectCollege.name); //测试输出
       wx.navigateTo({
-        url: '/pages/college/index/index',
+        url: '/pages/college/index/index?index={{this.data.currentindex}}',
       })
     },
-  }
+
+  }//methods
+
 })

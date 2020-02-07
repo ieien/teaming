@@ -5,13 +5,14 @@
   <searchbar> </searchbar>
   <Title></Title>
 
+  <!-- 内容板块 -->
   <view class="set">
-  <notice></notice>
+    <notice></notice>
   </view>
 
   <!-- 这里写了滚动区域 -->
   <view  style="display:{{show}};flex-direction: row;">
-    <sort></sort>
+    <sort collegeList='{{collegeList}}' ></sort>
   </view>
-  <!-- 这里写了滚动区域 -->
+  
 </view>

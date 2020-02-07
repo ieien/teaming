@@ -19,8 +19,8 @@ App({
       tel: '', //电话
       introduction: ''  //个人简介
     },
-    //学院列表，对象数组，[{id, name}, {} ...]
-    collegeList: [],  
+    //学院列表，对象数组，[{id, name, logo}, {} ...]
+    collegeList: null,  
     //是否已经注册，网络延迟原因，检测到用户已注册后更新此值有延迟（时间大于页面onLoad）
     isRegistered: false
   },
@@ -101,7 +101,7 @@ App({
     var that = this;
     wx.request({
       url: 'https://teaming.malateam.cn/src/college.php',
-      success(res) {
+      success: res => {
         // 测试输出
         // console.log("cllege\n");
         // console.log(res);
@@ -111,6 +111,11 @@ App({
           console.log(that.globalData.collegeList); //测试输出
         } else {
           console.log("学院数据获取失败");
+        }
+        // 由于 getCollegeList 是网络请求，可能会在 Page.onLoad 之后才返回
+        // 所以此处加入 callback 以防止这种情况
+        if (that.collegeListReadyCallback) {
+          that.collegeListReadyCallback(res)
         }
       }
     })

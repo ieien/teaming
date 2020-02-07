@@ -1,19 +1,43 @@
 //index.js
 //小程序主页
 
-
+const app = getApp();
 
 Page({
   data: {
-    
+    collegeList: [],   //学院列表
   },
   
+  /**
+   * 从全局变量获取学院列表
+   */
+  getCollegeList: function(){
+    if (app.globalData.collegeList){
+      this.setData({
+        collegeList: app.globalData.collegeList
+      })
+    }else{
+      // 由于 app.getCollegeList 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况。
+      app.collegeListReadyCallback = res => {
+        console.log(res);
+        this.setData({
+          collegeList: res.data.data,
+        })
+      }
+    }
+    
+  },
+
+
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     //console.log("onLoad");
+    this.getCollegeList();
 
   },
 
@@ -22,6 +46,7 @@ Page({
    */
   onReady: function () {
     //console.log("onReady");
+    
   },
 
   /**
@@ -29,7 +54,7 @@ Page({
    */
   onShow: function () {
    // console.log("onShow");
-
+    
   },
 
   /**

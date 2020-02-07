@@ -1,43 +1,46 @@
 <!--pages/college/index/index.wxml-->
+<!-- 学院详情 -->
 <view>
-<view>
-  <!-- 顶部图片留白 -->
-  <view class="top_block">
-  <image src="{{back_img}}"></image> 
-  </view>
-
-  <!-- 下方整体导航 -->
-  <view class="second_block">
-    <!--学院图标和名字-->
-    <view class="info_college">
-      <image src="{{url}}" class="img_college" ></image>
-      <text class="name_college">{{college}}</text>
-    </view>
-    <!--比赛分类按钮-->
-    <image class="sort" src="{{sort_img}}" bindtap="getIntoCompetition"></image>
-    
-  </view>
-</view>
-
-<!--本学院和意向本学院按钮-->
-<view class="third_block">
-<view class="left_txt">
-<text>本学院帖子</text>
-</view>
-<view class="rigth_txt">
-<text>意向本学院帖子</text>
-</view>
-</view>
-  <!-- 这里写一些notice -->
   <view>
-  <notice></notice>
+    <!-- 顶部图片留白 -->
+    <view class="top_block">
+      <image src="{{back_img}}"></image> 
+    </view>
+
+    <!-- 下方整体导航 -->
+    <view class="second_block">
+      <!--学院图标和名字-->
+      <view class="info_college">
+        <image src="{{url}}" class="img_college" ></image>
+        <text class="name_college">{{college}}</text>
+      </view>
+      <!--比赛分类按钮-->
+      <image class="sort" src="{{sort_img}}" bindtap="getIntoCompetition"></image>
+    </view>
+
   </view>
+
+  <!--本学院和意向本学院按钮-->
+  <view class="third_block">
+    <view class="left_txt">
+      <text>本学院帖子</text>
+    </view>
+    <view class="rigth_txt">
+      <text>意向本学院帖子</text>
+    </view>
+  </view>
+
+  <!-- 这里写一些notice，发布的内容 -->
+  <view>
+    <notice></notice>
+  </view>
+
   <!-- 这里写了滚动区域 -->
   <view  style="display:{{show}};flex-direction: row;">
-    <sort></sort>
+    <sort collegeList='{{collegeList}}'></sort>
   </view>
-  <!-- 这里写了滚动区域 -->
   
   <!-- 下面应该添加一个自己写的tabbar -->
-  </view>
+
+</view>
 

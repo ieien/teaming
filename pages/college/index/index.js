@@ -1,4 +1,8 @@
 // pages/college/index/index.js
+// 学院详情
+
+const app = getApp();
+
 Page({
 
   /**
@@ -6,9 +10,11 @@ Page({
    */
   data: {
     college: "软件学院",
-    url: "/image/rj.png",
+    url: "/image/college_logo/rj.png",
     back_img: "/image/college/back_img.jpg",
-    sort_img: "/image/college/sort_img.png"
+    sort_img: "/image/college/sort_img.png",
+
+    collegeList: []
   },
 
   //跳转到学院页面
@@ -19,10 +25,23 @@ Page({
   },
 
   /**
+   * 从全局变量中获取学院列表
+   */
+  getCollegeList: function(){
+    this.setData({
+      collegeList: app.globalData.collegeList
+    })
+  },
+
+
+
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    this.getCollegeList();
   },
 
   /**
