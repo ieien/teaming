@@ -1,11 +1,12 @@
 <!--pages/college/competition/index/index.wxml-->
+<!-- 学院比赛列表页面 -->
 <!-- 头 -->
 <view class="main-block">
   <view class="main">
   <view>
     <view class="nav1">
-      <image  class="xiaohui" src="{{college_img}}"></image>
-      <view class="collageName">{{collage}}</view>
+      <image  class="xiaohui" src="{{college_logo}}"></image>
+      <view class="collageName">{{college}}</view>
     </view>
   </view>
   <view class="nav-line"></view>
@@ -16,21 +17,19 @@
 </view>
 </view>
 
-<!-- 每个项目 -->
-<view>
-  <template is="pro" data="{{...item}}"/>
-  <template is="pro" data="{{...item}}"/>
-  <template is="pro" data="{{...item}}"/>
+<!-- 每个竞赛 -->
+<view wx:for="{{competitionList}}" wx:key="id">
+  <template is="pro" data="{{...competitionList[index]}}"/>
 </view>
 
 
-<!-- 定义项目模板 -->
+<!-- 定义竞赛模板 -->
 <template name="pro">
-  <view class="project">
-    <image src="{{src}}" class="proImage"  bindtap="detail"></image>
-    <view class="protext" bindtap="detail">
-      <view class="protext1">{{protext1}}</view>
-      <view class="protext2">{{protext2}}</view>
+  <view class="project" bindtap="detail" data-id="{{id}}">
+    <image src="{{logo}}" class="proImage"></image>
+    <view class="protext">
+      <view class="protext1">{{name}}</view>
+      <view class="protext2"> </view>
       <view class="proline"></view>
     </view>
   </view>

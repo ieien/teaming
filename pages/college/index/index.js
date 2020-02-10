@@ -9,18 +9,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    college: "软件学院",
-    url: "/image/college_logo/rj.png",
+    id: 0,
+    college: '',
+    logo: '',
     back_img: "/image/college/back_img.jpg",
     sort_img: "/image/college/sort_img.png",
 
     collegeList: []
   },
 
-  //跳转到学院页面
+  //跳转到学院比赛页面
   getIntoCompetition: function () {
+    var id = this.data.id;
+    var name = this.data.college;
+    var logo = this.data.logo;
     wx.navigateTo({
-      url: '/pages/college/competition/index/index'
+      url: '/pages/college/competition/index/index?id='+id+'&name='+name+'&logo='+logo
     })
   },
 
@@ -33,6 +37,18 @@ Page({
     })
   },
 
+  /**
+   * 从学院列表中获取当前学院
+   */
+  getCollege: function(index){
+    var prevCollege = this.data.collegeList[index];
+    //console.log(prevCollege.logo);//测试输出
+    this.setData({
+      id: prevCollege.id,
+      college: prevCollege.name,
+      logo: prevCollege.logo
+    })
+  },
 
 
 
@@ -40,8 +56,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
+    //console.log("当前索引---index："+options.index);
     this.getCollegeList();
+    this.getCollege(options.index)
   },
 
   /**

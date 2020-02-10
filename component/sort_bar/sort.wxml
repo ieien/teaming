@@ -10,11 +10,14 @@
   <!-- 这里写的是滚动图 -->
   <view>
     <scroll-view class="nav" scroll-x>
-      <view class="nav_item {{index==currentindex?'active':''}}" wx:for="{{collegeList}}" wx:key="{{index}}" bindtap="activeNav" data-index="{{index}}">
-        <view class="nav_display" bindtap="college">
+      <!-- 学院列表 -->
+      <view class="nav_item {{index==currentindex?'active':''}}" wx:for="{{collegeList}}" wx:key="id">
+
+        <view class="nav_display" bindtap="clickCollege" data-index="{{index}}">
           <image src="{{item.logo}}"  mode="widthFix"  ></image>
           <text>{{item.name}}</text>
         </view>
+
       </view>
     </scroll-view>
   </view>

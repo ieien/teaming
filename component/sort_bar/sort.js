@@ -18,10 +18,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    //currentSelect:"NCHU",
+    //当前数组索引
     currentindex: -1,
-    //left: 0,
-    //nav_list: []
   },
 
   /**
@@ -30,13 +28,13 @@ Component({
   methods: {
 
     //获取被选择的学院的数组下标
-    activeNav(e){
-      //console.log(e)
-      this.setData({
-        currentindex: e.currentTarget.dataset.index,
-      })
-      console.log("当前索引  "+ this.data.currentindex)
-    },
+    // activeNav(e){
+    //   //console.log(e)
+    //   this.setData({
+    //     currentindex: e.currentTarget.dataset.index,
+    //   })
+    //   console.log("当前索引  "+ this.data.currentindex)
+    // },
 
     //跳转到主页
     selectNCHU: function (e) {
@@ -46,15 +44,29 @@ Component({
     },
 
     //监听点击事件，然后关闭当前页面，跳转到另一学院页面
-    college: function(e) {
-      var index = this.data.currentindex; //当前下标
-      var college = this.properties.collegeList; //学院列表
-      var beSelectCollege = college[index]; //被选择的学院
-      console.log(beSelectCollege.id +" "+ beSelectCollege.name); //测试输出
-      wx.navigateTo({
-        url: '/pages/college/index/index?index={{this.data.currentindex}}',
+    clickCollege: function(e) {
+      //获取被选择的学院的数组下标
+      this.setData({
+        currentindex: e.currentTarget.dataset.index,
       })
-    },
+      //console.log("当前索引  " + this.data.currentindex)//测试输出
+
+      var index = this.data.currentindex; //当前数组下标
+      //var college = this.properties.collegeList; //学院列表
+      //var beSelectCollege = college[index]; //被选择的学院
+      //console.log(beSelectCollege.id +" "+ beSelectCollege.name); //测试输出
+      //获取当前页面栈数量
+      var pages =  getCurrentPages().length;
+      if(pages > 1){ //不是首页的情况
+        wx.redirectTo({
+          url: '/pages/college/index/index?index=' + index,
+        })
+      }else{ //是首页的情况
+        wx.navigateTo({
+          url: '/pages/college/index/index?index=' + index,
+        })
+      }
+    }
 
   }//methods
 

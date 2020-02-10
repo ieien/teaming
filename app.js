@@ -108,7 +108,7 @@ App({
         //状态码为零，表示成功取得数据
         if (res.data.code === 0) {
           that.globalData.collegeList = res.data.data;
-          console.log(that.globalData.collegeList); //测试输出
+          //console.log(that.globalData.collegeList); //测试输出
         } else {
           console.log("学院数据获取失败");
         }

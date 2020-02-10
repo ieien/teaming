@@ -6,7 +6,7 @@
         <image src='{{down_img}}'  class='com-sImg'  animation="{{animationData}}"></image>
     </view>
     <view class='com-sList' wx:if="{{selectShow}}">
-        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='' class='com-sItem' bindtap='setText'>{{item.name}}</view>
+        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='id' class='com-sItem' bindtap='setText'>{{item.name}}</view>
     </view>
     
 </view>

@@ -1,5 +1,5 @@
  <!-- 这里是公告内容板块 -->
-    <view class="notice" wx:for="{{number}}" wx:key="{{index}}">
+    <view class="notice" wx:for="{{number}}">
     <!-- 这里是公告的标题 -->
       <view class="title">{{Title}}</view>
       <!-- 这里是公告的图标处 -->
@@ -28,9 +28,9 @@
       <view class="more">
         <text class="date">{{date_time}}</text>
 
-       <!-- <button bindtap="detail"> -->
-       <text class="read_more" bindtap="detail" >Read More</text> 
-       <!-- </button> -->
+        <!-- <button bindtap="detail"> -->
+        <text class="read_more" bindtap="detail" >Read More</text> 
+        <!-- </button> -->
         
       </view>
     </view>

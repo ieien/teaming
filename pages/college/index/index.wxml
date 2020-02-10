@@ -11,7 +11,7 @@
     <view class="second_block">
       <!--学院图标和名字-->
       <view class="info_college">
-        <image src="{{url}}" class="img_college" ></image>
+        <image src="{{logo}}" class="img_college" ></image>
         <text class="name_college">{{college}}</text>
       </view>
       <!--比赛分类按钮-->
