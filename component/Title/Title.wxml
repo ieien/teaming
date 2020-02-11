@@ -1,5 +1,5 @@
 
-<!-- 滚动图 -->
+<!-- 主页图片滚动图 -->
 <swiper class="swiper" indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}" wx:key="key">

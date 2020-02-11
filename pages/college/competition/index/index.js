@@ -57,7 +57,14 @@ Page({
           })
           //console.log(_this.data.competitionList); //测试输出
         } else {
-          console.log("学院数据获取失败");
+          //此处一个弹框提示（提示用户学院数据获取失败）
+          wx.showModal({
+            title: 'fail',
+            content: '查询失败',
+            showCancel: false, //不显示取消按钮，只能确定
+            success(res) {
+            }
+          }) //
         }
       }
     })

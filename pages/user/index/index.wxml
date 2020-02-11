@@ -1,12 +1,11 @@
 <!--pages/user/index/index.wxml-->
+
 <view >
   <view class="view1"></view>
-  <image class="touxiang" >
-    <open-data type="userAvatarUrl"></open-data>
-  </image>
+  <image class="touxiang" src="{{avatar}}"></image>
   
   <view class="nickname">
-    <open-data type="userNickName" lang="zh_CN"></open-data>
+    {{userName}}
   </view>
   <navigator url="../index/index" hover-class="navigator-hover">
     <image class="tongzhi" src="../../../image/tongzhi_1.png"></image>

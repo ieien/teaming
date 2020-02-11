@@ -1,4 +1,6 @@
 // component/sort.js
+// 学院列表滚动条
+
 Component({
   /**
    * 组件的属性列表

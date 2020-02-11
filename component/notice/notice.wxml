@@ -1,7 +1,7 @@
  <!-- 这里是公告内容板块 -->
     <view class="notice" wx:for="{{number}}">
     <!-- 这里是公告的标题 -->
-      <view class="title">{{Title}}</view>
+      <view class="title">{{title}}</view>
       <!-- 这里是公告的图标处 -->
       <view class="icon">
         <view class="part">

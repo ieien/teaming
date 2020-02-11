@@ -10,6 +10,7 @@ App({
     //用户详细信息
     userInfo: {
       userName: '',  //用户姓名
+      avatar: '/image/user_init.jpg', //用户头像（初始）
       sex: '',   //性别
       grade: '',  //年级
       college: '',   //学院
@@ -33,9 +34,6 @@ App({
     //获取用户登陆凭证
     wx.login({
       success(res) {
-        //测试输出
-        //console.log("登陆凭证：\n");
-        //console.log(res);
         if (res.code) {
           //通过登陆凭证获取用户openid，并检查用户是否存在，若不存在则跳转更新信息页面
           wx.request({
@@ -53,6 +51,7 @@ App({
               if (res.data.code === 0) {
                 //设置全局变量-用户信息
                 that.globalData.userInfo.userName = res.data.data.userInfo.user_name;
+                that.globalData.userInfo.avatar = res.data.data.userInfo.avatar;
                 that.globalData.userInfo.sex = res.data.data.userInfo.sex;
                 that.globalData.userInfo.grade = res.data.data.userInfo.grade;
                 that.globalData.userInfo.college = res.data.data.userInfo.college_name;
@@ -86,8 +85,15 @@ App({
           })//wx.request
 
         } else {
-          //此处应为弹框提示
-          console.log('登录失败！' + res.errMsg)
+          //此处一个弹框提示（提示用户登陆失败）
+          wx.showModal({
+            title: 'fail',
+            content: '登陆失败',
+            showCancel: false, //不显示取消按钮，只能确定
+            success(res2) {
+              console.log('登录失败！' + res.errMsg)
+            }
+          }) //
         }
       }//wx.login.success
     })//wx.login

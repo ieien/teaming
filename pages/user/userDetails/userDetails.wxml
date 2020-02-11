@@ -2,29 +2,29 @@
 <view class="view2">
 
   <view class="view1"></view>
-  <image class="touxiang" src=''><open-data type="userAvatarUrl"></open-data></image>
-  <open-data type="userAvatarUrl"></open-data>
-  <view class="nickname"><open-data type="userNickName" lang="zh_CN"></open-data></view>
-  <image class="eye" src="../../../image/eye.png"></image>
+  <image class="touxiang" src="{{userInfo.avatar}}"></image>
+  <view class="nickname">{{userInfo.userName}}</view>
+
+  <image class="eye" src="/image/eye.png"></image>
   <view class="academy">{{userInfo.college}}</view>
   <navigator url="../updateUserInfo/updateUserInfo?id=1&is_sign_up=false" hover-class="navigator-hover">
-    <image class="modify" src="../../../image/modify.png"></image>
+    <image class="modify" src="/image/modify.png"></image>
     <view class="wenben">修改个人信息</view>
-  </navigator> 
+  </navigator>
   <textarea class="information" value="{{userInfo.introduction}}"></textarea>
 
   <view class="border"></view>
-  <image class="tupian a1"  src="../../../image/username.png"></image>
+  <image class="tupian a1" src="/image/username.png"></image>
   <view class="wenzi b1">{{userInfo.userName}}</view>
-  <image class="tupian a2"  src="../../../image/grade.png"></image>
+  <image class="tupian a2" src="/image/grade.png"></image>
   <view class="wenzi b2">{{userInfo.grade}}</view>
-  <image class="tupian a3"  src="../../../image/sex.png"></image>
+  <image class="tupian a3" src="/image/sex.png"></image>
   <view class="wenzi b3">{{userInfo.sex}}</view>
-  <image class="tupian a4"  src="../../../image/experience.png"></image>
+  <image class="tupian a4" src="/image/experience.png"></image>
   <view class="wenzi b4">{{userInfo.experience}}</view>
-  <image class="tupian a5"  src="../../../image/qq.png"></image>
+  <image class="tupian a5" src="/image/qq.png"></image>
   <view class="wenzi b5">{{userInfo.qq}}</view>
-  <image class="tupian a6"  src="../../../image/wechat.png"></image>
+  <image class="tupian a6" src="/image/wechat.png"></image>
   <view class="wenzi b6">{{userInfo.weixin}}</view>
 
 </view>

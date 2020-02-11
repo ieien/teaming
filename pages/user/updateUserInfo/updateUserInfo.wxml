@@ -2,83 +2,96 @@
 <!-- 用户注册和更新信息的页面 -->
 
 <view>
-<form bindsubmit="formSubmit" bindreset="formReset">
+  <form bindsubmit="formSubmit" bindreset="formReset">
 
-  <!-- 用户姓名输入 -->
-  <view class="secion">
-    <view class="section__title">姓名</view>
-    <input name="userName" placeholder="输入真实姓名可以让别人快速了解你哦" />
-  </view>
+    <!-- 设置头像 -->
+      <image class="userinfo-avatar" src="{{avatar}}" mode="cover"></image>
+      <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserAvatar"> 获取微信头像 </button>
+      <input name="avatar" hidden="false" value="{{avatar}}" />
 
-  <!-- 选择性别 -->
-  <view class="section section_gap">
-    <view class="section__title">性别</view>
-    <radio-group name="sex">
-      <label><radio value="男"/>男</label>
-      <label><radio value="女"/>女</label>
-    </radio-group>
-  </view>
+    <!-- 用户姓名输入 -->
+    <view class="secion">
+      <view class="section__title">姓名</view>
+      <input name="userName" placeholder="输入真实姓名可以让别人快速了解你哦" value="{{userInfo.userName}}"/>
+    </view>
 
-  <!-- 选择年级 -->
-  <view class="section section_gap">
-    <view class="section__title">年级</view>
-    <radio-group name="grade">
-      <label><radio value="大一"/>大一</label>
-      <label><radio value="大二"/>大二</label>
-      <label><radio value="大三"/>大三</label>
-      <label><radio value="大四"/>大四</label>
-      <label><radio value="研一"/>研一</label>
-      <label><radio value="研二"/>研二</label>
-      <label><radio value="研三"/>研三</label>
-      <label><radio value="研四"/>研四</label>
-    </radio-group>
-  </view>
+    <!-- 选择性别 -->
+    <view class="section section_gap">
+      <view class="section__title">性别</view>
+      <radio-group name="sex">
+        <label>
+          <radio value="男" />男</label>
+        <label>
+          <radio value="女" />女</label>
+      </radio-group>
+    </view>
 
-  <!-- 选择学院，普通选择器 -->
-  <view class="section">
-    <view class="section__title">学院：</view>
-    <picker  bindchange="bindPickerChange" value="{{index}}" range="{{collegeList}}" range-key="name">
-      <view >{{collegeList[index].name}}</view>
-      <!-- input不显示，只为向js提交数据 -->
-      <input name="college" hidden="false" value="{{collegeList[index].name}}"/>  
-    </picker>
-  </view>
+    <!-- 选择年级 -->
+    <view class="section section_gap">
+      <view class="section__title">年级</view>
+      <radio-group name="grade">
+        <label>
+          <radio value="大一" />大一</label>
+        <label>
+          <radio value="大二" />大二</label>
+        <label>
+          <radio value="大三" />大三</label>
+        <label>
+          <radio value="大四" />大四</label>
+        <label>
+          <radio value="研一" />研一</label>
+        <label>
+          <radio value="研二" />研二</label>
+        <label>
+          <radio value="研三" />研三</label>
+        <label>
+          <radio value="研四" />研四</label>
+      </radio-group>
+    </view>
 
-  <!-- 输入参加过的比赛 -->
-  <view class="secion">
-    <view class="section__title">参加过的比赛或项目</view>
-    <input name="experience" placeholder="在此展示自己的职业历程吧" />
-  </view>
+    <!-- 选择学院，普通选择器 -->
+    <view class="section">
+      <view class="section__title">学院：</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{collegeList}}" range-key="name">
+        <view>{{collegeList[index].name}}</view>
+        <!-- input不显示，只为向表单提交数据 -->
+        <input name="college" hidden="false" value="{{collegeList[index].name}}" />
+      </picker>
+    </view>
 
-  <!-- qq -->
-  <view class="secion">
-    <view class="section__title">QQ</view>
-    <input name="qq" placeholder="" />
-  </view>
-  <!-- 微信 -->
-  <view class="secion">
-    <view class="section__title">微信</view>
-    <input name="weixin" placeholder="" />
-  </view>
-  <!-- 电话 -->
-  <view class="secion">
-    <view class="section__title">电话</view>
-    <input name="tel" placeholder="" />
-  </view>
+    <!-- 输入参加过的比赛 -->
+    <view class="secion">
+      <view class="section__title">参加过的比赛或项目</view>
+      <input name="experience" placeholder="在此展示自己的职业历程吧" value="{{userInfo.experience}}" />
+    </view>
 
-  <!-- 个人详细介绍 -->
-  <view class="secion">
-    <view class="section__title">个人详细介绍</view>
-    <textarea name="introduction" placeholder="还有要补充的在这里说吧" rows="5"/>
-  </view>
+    <!-- qq -->
+    <view class="secion">
+      <view class="section__title">QQ</view>
+      <input name="qq" placeholder="" value="{{userInfo.qq}}"/>
+    </view>
+    <!-- 微信 -->
+    <view class="secion">
+      <view class="section__title">微信</view>
+      <input name="weixin" placeholder="" value="{{userInfo.weixin}}"/>
+    </view>
+    <!-- 电话 -->
+    <view class="secion">
+      <view class="section__title">电话</view>
+      <input name="tel" placeholder="" value="{{userInfo.tel}}"/>
+    </view>
 
-  <!-- 确定和重置按钮 -->
-  <view class="btn-area">
-    <button formType="submit">确定</button>
-    <button formType="reset">重置</button>
-  </view>
+    <!-- 个人详细介绍 -->
+    <view class="secion">
+      <view class="section__title">个人详细介绍</view>
+      <textarea name="introduction" placeholder="还有要补充的在这里说吧" rows="5" value="{{userInfo.introduction}}"/>
+    </view>
 
-</form>
+    <!-- 确定和重置按钮 -->
+    <view class="btn-area">
+      <button formType="submit">确定</button>
+      <button formType="reset">重置</button>
+    </view>
+
+  </form>
 </view>
-
-

@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <!-- 小程序主页 -->
+
 <view class="main">
 <!-- 公共头部 -->
   <searchbar> </searchbar>

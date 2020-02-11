@@ -1,4 +1,6 @@
 // pages/detail/index.js
+// 发布的信息详情页面
+
 Page({
 
   /**

@@ -1,10 +1,25 @@
 // component/notice/notice.js
+
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    /**
+     * 要显示的数据：对象类型
+     * id： 发布的帖子id
+     * title：标题
+     * time：发布时间
+     * content：详细内容
+     * publisher：发布者名字
+     * college：发布人所属学院
+     * com_name：比赛名字
+     * com_logo：比赛图标
+     * level：比赛等级
+     */
+    post: {
+      type: Object
+    }
   },
 
   /**
@@ -14,7 +29,7 @@ Component({
     show: "flex",
     scrollTop: 0,
     number: [{}, {}, {}, {}],
-    Title: "ACM诚心交友",
+    title: "ACM诚心交友",
     date_time: "2019-09-04",
     user_image: "../../image/user_image.jpg",
     game_image: "../../image/acm.jpg",
@@ -38,6 +53,6 @@ Component({
         url: '/pages/detail/index',
       })
     },
-    
+
   }
 })

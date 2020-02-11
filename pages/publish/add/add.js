@@ -15,7 +15,8 @@ Page({
   },
 
   /**
-   * 获取用户所属学院的所有比赛
+   * 从全局变量中获取学院数据，
+   * 从数据库中获取用户所属学院的所有比赛
    */
   getCompetition: function() {
     //先判断用户是否注册了
@@ -28,7 +29,7 @@ Page({
           college: app.globalData.userInfo.college
         },
         success(res) {
-          console.log(res.data); // 测试输出
+          //console.log(res.data); // 测试输出
           //状态码为零，表示成功取得数据
           if (res.data.code === 0) {
             _this.setData({
@@ -114,7 +115,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       success(res) {
-        console.log(res); //测试输出
+        //console.log(res); //测试输出
         if (res.data.code === 0) { //服务器端更新成功，此处更新全局变量          
           //此处一个弹框提示（提示用户信息更新成功）
           wx.showModal({
@@ -144,7 +145,6 @@ Page({
       }, //success
       //调用失败
       fail(res) {
-
       }
     }) //wx.request
   },

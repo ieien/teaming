@@ -32,13 +32,20 @@ Page({
         user_id: app.globalData.openid
       },
       success(res) {
-        console.log(res);
+        //console.log(res);
         if(res.data.code === 0){
           _this.setData({
             myPublicList: res.data.data
           })
         }else{
-          console.log('获取我的发布信息失败');
+          //此处一个弹框提示（提示用户信息获取失败）
+          wx.showModal({
+            title: 'fail',
+            content: '获取消息失败',
+            showCancel: false, //不显示取消按钮，只能确定
+            success(res) {
+            }
+          }) //
         }
       }
     })
