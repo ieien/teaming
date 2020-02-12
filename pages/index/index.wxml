@@ -7,8 +7,8 @@
   <Title></Title>
 
   <!-- 内容板块 -->
-  <view class="set">
-    <notice></notice>
+  <view class="set" wx:for="{{postList}}" wx:key="news_id">
+    <notice post="{{postList[index]}}"></notice>
   </view>
 
   <!-- 这里写了滚动区域 -->

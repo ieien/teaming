@@ -9,13 +9,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: 0,
-    college: '',
-    logo: '',
+    id: 0,   //学院id
+    college: '', //学院名字
+    logo: '',  //学院logo
     back_img: "/image/college/back_img.jpg",
-    sort_img: "/image/college/sort_img.png",
 
-    collegeList: []
+    collegeList: [], 
+
+    page: 1, //页数，首页要展示的帖子的数量，1页10个帖子
+    haveMore: true, //表示还有更多数据（还可上拉页面）
+    postList: [], //帖子列表
   },
 
   //跳转到学院比赛页面
@@ -50,6 +53,40 @@ Page({
     })
   },
 
+  /**
+   * 分页获取帖子（获取当前学院内用户发表的帖子）
+   */
+  getPosts: function () {
+    const _this = this;
+    wx.request({
+      url: 'https://teaming.malateam.cn/src/find_posts_in_college.php',
+      data: {
+        page: _this.data.page, //页数
+        college_id: _this.data.id  //学院id
+      },
+      success(res) {
+        //console.log(res.data.data);
+        // 状态码为0，请求数据成功
+        if (res.data.code === 0) {
+          var addPosts = _this.data.postList;
+          addPosts = addPosts.concat(res.data.data);
+          //console.log("addPosts");
+          //console.log(addPosts);
+          _this.setData({
+            postList: addPosts
+          })
+          // 状态码为3，没有更多数据了
+        } else if (res.data.code === 3) {
+          _this.setData({
+            haveMore: false
+          })
+        } else {
+          // 数据库操作失败
+        }
+      }//success
+    })//request
+  },
+
 
 
   /**
@@ -58,7 +95,8 @@ Page({
   onLoad: function (options) {
     //console.log("当前索引---index："+options.index);
     this.getCollegeList();
-    this.getCollege(options.index)
+    this.getCollege(options.index);
+    this.getPosts();
   },
 
   /**
@@ -100,7 +138,16 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (this.data.haveMore) {
+      //加载更多的帖子
+      var _page = this.data.page + 1;
+      this.setData({
+        page: _page
+      })
+      this.getPosts();
+    } else {
+      console.log('没有更多的信息了');
+    }
   },
 
   /**

@@ -6,6 +6,23 @@ const app = getApp();
 Page({
   data: {
     collegeList: [],   //学院列表
+    page: 1, //页数，首页要展示的帖子的数量，1页10个帖子
+    haveMore: true, //表示还有更多数据（还可上拉页面）
+    postList: [], //帖子列表
+    // [{
+    //   avatar：用户头像、
+    //   user_name：名字、
+    //   college_name：学院，
+    //   com_logo：比赛图标、
+    //   com_name：名字、
+    //   level：等级，
+    //   news_id：消息id、
+    //   title：标题、
+    //   detail：详情、
+    //   post_time：时间、
+    //   views：浏览量、
+    //   likes：支持量
+    // }]
   },
   
   /**
@@ -20,7 +37,6 @@ Page({
       // 由于 app.getCollegeList 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况。
       app.collegeListReadyCallback = res => {
-        //console.log(res);
         this.setData({
           collegeList: res.data.data,
         })
@@ -29,6 +45,38 @@ Page({
     
   },
 
+  /**
+   * 分页获取帖子
+   */
+  getPosts: function(){
+    const _this = this;
+    wx.request({
+      url: 'https://teaming.malateam.cn/src/find_posts_in_homepage.php',
+      data: {
+        page: _this.data.page //页数
+      },
+      success(res){
+        //console.log(res.data.data);
+        // 状态码为0，请求数据成功
+        if(res.data.code === 0){
+          var addPosts = _this.data.postList;
+          addPosts = addPosts.concat(res.data.data);
+          //console.log("addPosts");
+          //console.log(addPosts);
+          _this.setData({
+            postList: addPosts
+          })
+        // 状态码为3，没有更多数据了
+        } else if (res.data.code === 3){
+          _this.setData({
+            haveMore: false
+          })
+        } else {
+          // 数据库操作失败
+        }
+      }//success
+    })//request
+  },
 
 
 
@@ -36,9 +84,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //console.log("onLoad");
     this.getCollegeList();
-
+    this.getPosts();
   },
 
   /**
@@ -118,7 +165,17 @@ Page({
    * 页面触底时执行
    */
   onReachBottom: function () {
-    
+
+    if(this.data.haveMore){
+      //加载更多的帖子
+      var _page = this.data.page + 1;
+      this.setData({
+        page: _page
+      })
+      this.getPosts();
+    }else{
+      console.log('没有更多的信息了');
+    }
   },
 
 

@@ -26,8 +26,8 @@
   </view>
 
   <!-- 这里写一些notice -->
-  <view>
-    <notice></notice>
+  <view class="" wx:for="{{postList}}" wx:key="news_id">
+    <notice post="{{postList[index]}}"></notice>
   </view>
 
 </view>

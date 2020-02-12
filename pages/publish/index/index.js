@@ -37,6 +37,8 @@ Page({
           _this.setData({
             myPublicList: res.data.data
           })
+        } else if (res.data.code === 3){
+          console.log('未发布信息');
         }else{
           //此处一个弹框提示（提示用户信息获取失败）
           wx.showModal({
@@ -45,8 +47,8 @@ Page({
             showCancel: false, //不显示取消按钮，只能确定
             success(res) {
             }
-          }) //
-        }
+          }) 
+        }//if
       }
     })
   },

@@ -15,7 +15,6 @@ Page({
     is_sign_up: false,  //注册信息还是更新信息,true表示注册
 
     avatar: '',
-    // hasUserAvatar: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
@@ -47,9 +46,8 @@ Page({
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
       },
       success(res) {
-        //console.log("更新请求成功");
-        //console.log(res);  //测试输出
-        if (res.data.code === 0) { //服务器端更新成功，此处更新全局变量
+        // 服务器端更新成功，此处更新全局变量
+        if (res.data.code === 0) { 
           app.globalData.userInfo.userName = userInfoForm.userName;
           app.globalData.userInfo.avatar = userInfoForm.avatar;
           app.globalData.userInfo.sex = userInfoForm.sex;
@@ -77,7 +75,14 @@ Page({
             }
           })//
         } else {
-          console.log("信息更新失败");
+          //此处一个弹框提示（提示用户信息更新失败）
+          wx.showModal({
+            title: 'fail',
+            content: '消息更新失败',
+            showCancel: false, //不显示取消按钮，只能确定
+            success(res) {
+            }
+          }) //
         }
       },//success
       //调用失败

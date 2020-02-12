@@ -15,7 +15,7 @@
         <text class="name_college">{{college}}</text>
       </view>
       <!--比赛分类按钮-->
-      <image class="sort" src="{{sort_img}}" bindtap="getIntoCompetition"></image>
+      <image class="sort" src="/image/college/sort_img.png" bindtap="getIntoCompetition" ></image>
     </view>
 
   </view>
@@ -31,8 +31,8 @@
   </view>
 
   <!-- 这里写一些notice，发布的内容 -->
-  <view>
-    <notice></notice>
+  <view class="" wx:for="{{postList}}" wx:key="news_id">
+    <notice post="{{postList[index]}}"></notice>
   </view>
 
   <!-- 这里写了滚动区域 -->

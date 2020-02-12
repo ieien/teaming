@@ -5,17 +5,20 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    /**
-     * 要显示的数据：对象类型
-     * id： 发布的帖子id
-     * title：标题
-     * time：发布时间
-     * content：详细内容
-     * publisher：发布者名字
-     * college：发布人所属学院
-     * com_name：比赛名字
-     * com_logo：比赛图标
-     * level：比赛等级
+    /** post: {
+     *   avatar：用户头像、
+     *   user_name：名字、
+     *   college_name：学院，
+     *   com_logo：比赛图标、
+     *   com_name：名字、
+     *   level：等级，
+     *   news_id：消息id、
+     *   title：标题、
+     *   detail：详情、
+     *   post_time：时间、
+     *   views：浏览量、
+     *   likes：支持量
+     *  }
      */
     post: {
       type: Object

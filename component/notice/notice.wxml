@@ -1,32 +1,32 @@
  <!-- 这里是公告内容板块 -->
-    <view class="notice" wx:for="{{number}}">
+    <view class="notice">
     <!-- 这里是公告的标题 -->
-      <view class="title">{{title}}</view>
+      <view class="title">{{post.title}}</view>
       <!-- 这里是公告的图标处 -->
       <view class="icon">
         <view class="part">
-          <image src="{{user_image}}" mode="widthFix"></image>
+          <image src="{{post.avatar}}" mode="widthFix"></image>
           <view class="id">
-            <text>{{username}}</text>
-            <text class="_id">{{college}}</text>
+            <text>{{post.user_name}}</text>
+            <text class="_id">{{post.college_name}}</text>
           </view>
         </view>
 
         <!-- <text class="icon_text">for</text> -->
         <view class="part">
-          <image src="{{game_image}}" mode="widtFix"></image>
+          <image src="{{post.com_logo}}" mode="widtFix"></image>
           <view class="id">
-            <text>{{c_name}}</text>
-            <text class="_id">{{level}}</text>
+            <text>{{post.com_name}}</text>
+            <text class="_id">{{post.level}}</text>
           </view>
         </view>
       </view>
 
       <!-- 这里是公告的内容处 -->
-      <view class="content"> <text>{{content}}</text> </view>
+      <view class="content"> <text>{{post.detail}}</text> </view>
       <!-- 这里是公告的时间和更多处 -->
       <view class="more">
-        <text class="date">{{date_time}}</text>
+        <text class="date">{{post.post_time}}</text>
 
         <!-- <button bindtap="detail"> -->
         <text class="read_more" bindtap="detail" >Read More</text> 
