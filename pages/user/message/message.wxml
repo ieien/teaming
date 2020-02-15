@@ -1,2 +1,7 @@
 <!--pages/user/message/message.wxml-->
-<text>pages/user/message/message.wxml</text>
+
+<view class="first">
+<mess></mess>
+<mess></mess>
+<mess></mess>
+</view>

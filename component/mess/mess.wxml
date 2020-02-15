@@ -1,0 +1,10 @@
+<view class="second">
+<view class="from"><image src="../../image/user_init.jpg" mode="widthFix"></image></view>
+<view class="third">
+<text class="third1">来自：系统</text>
+<text class="third2">发布成功</text>
+</view>
+<view class="four">
+<image src="../../image/delate.jpg" mode="widthFix"></image>
+</view>
+</view>

@@ -11,6 +11,7 @@ Page({
   data: {
     avatar: '', //用户头像
     userName: '', //用户名字
+    college: ''  //学院
   },
 
   /**
@@ -20,7 +21,8 @@ Page({
     if (app.globalData.userInfo.userName != ''){
       this.setData({
         avatar: app.globalData.userInfo.avatar,
-        userName: app.globalData.userInfo.userName
+        userName: app.globalData.userInfo.userName,
+        college: app.globalData.userInfo.college
       })
     }else{
       this.setData({

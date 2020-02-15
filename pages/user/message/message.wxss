@@ -1,1 +1,9 @@
 /* pages/user/message/message.wxss */
+
+.first{
+  display: flex;
+  flex-direction: column;
+  width: 100vh;
+  height: 100vh;
+  background-color:  rgba(223, 221, 218, 1);
+}
