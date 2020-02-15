@@ -3,6 +3,7 @@
       "pages/index/index",
       "pages/publish/index/index",
       "pages/publish/add/add",
+      "pages/publish/publisher/publisher",
       "pages/college/index/index",
       "pages/detail/index",
       "pages/college/competition/detail/detail",
@@ -12,7 +13,8 @@
       "pages/user/updateUserInfo/updateUserInfo",
       "pages/user/userGuide/userGuide",
       "pages/user/feedback/feedback",
-      "pages/user/about/about"
+      "pages/user/about/about",
+      "pages/user/message/message"
     ],
     "window": {
       "backgroundTextStyle": "light",

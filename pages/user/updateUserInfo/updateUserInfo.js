@@ -14,7 +14,7 @@ Page({
     index: 0, //学院列表中所选学院的下标
     is_sign_up: false,  //注册信息还是更新信息,true表示注册
 
-    avatar: '',
+    avatar: '', //获取到的微信头像
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
@@ -80,15 +80,9 @@ Page({
             title: 'fail',
             content: '消息更新失败',
             showCancel: false, //不显示取消按钮，只能确定
-            success(res) {
-            }
           }) //
         }
       },//success
-      //调用失败
-      fail(res) {
-
-      }
     })//wx.request
   },
 
@@ -96,17 +90,32 @@ Page({
    * 表单提交
    */
   formSubmit: function (e) {
-    //将表单中的信息提交至服务器，并判断是否提交成功
-    this.updateUserInfo(e.detail.value);
-  },
-  
-  /**
-   * 表单重置，
-   */
-  formReset: function () {
-    this.setData({
-      avatar: app.globalData.userInfo.avatar
-    })
+    //检验表单数据是否合法
+    if (e.detail.value.userName.length < 2 || e.detail.value.userName.length == null){
+      //此处一个弹框提示
+      wx.showToast({
+        title: '昵称长度要在2-10之间',
+        icon: 'none',
+        duration: 2500,
+      }) 
+    } else if (e.detail.value.sex == null || e.detail.value.grade == null || e.detail.value.sex == '' || e.detail.value.grade == ''){
+      //此处一个弹框提示
+      wx.showToast({
+        title: '性别和年级不能为空',
+        icon: 'none',
+        duration: 2500,
+      }) 
+    } else if ((e.detail.value.qq == '' || e.detail.value.qq == null) && (e.detail.value.weixin == '' || e.detail.value.weixin == null) && (e.detail.value.tel == '' || e.detail.value.tel == null)){
+      //此处一个弹框提示
+      wx.showToast({
+        title: 'QQ、微信、电话至少填一项',
+        icon: 'none',
+        duration: 2500,
+      }) 
+    } else{
+      //将表单中的信息提交至服务器，并判断是否提交成功
+      this.updateUserInfo(e.detail.value);
+    }
   },
 
   /**
@@ -140,7 +149,6 @@ Page({
       avatar: app.globalData.userInfo.avatar,
       is_sign_up: options.is_sign_up, //注册信息或更新信息
     })
-    this.formReset();
   },
 
   /**

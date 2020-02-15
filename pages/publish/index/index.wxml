@@ -1,10 +1,12 @@
 <!--pages/publish/index/index.wxml-->
+<!-- 我发布的帖子页面 -->
+
 <view class="container">
   <!-- 列表 -->
   <view class="pro-1">
 
     <!-- 列表项 -->
-    <view class="logo-1" wx:for="{{myPublicList}}" wx:key="news_id">
+    <view class="logo-1" wx:for="{{myPublicList}}" wx:key="news_id" bindtap="detail" data-index="{{index}}">
       <!-- 左边的大图标 -->
       <image class="pro-logo" src= "{{book_img}}"></image>
       <!-- 单项中的内容 -->

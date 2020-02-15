@@ -1,4 +1,5 @@
 // pages/publish/index/index.js
+// 我发布的帖子页面
 
 const app = getApp();
 Page({
@@ -50,6 +51,15 @@ Page({
           }) 
         }//if
       }
+    })
+  },
+
+  /**
+   * 查看我发布的帖子详情
+   */
+  detail: function(e) {
+    wx.navigateTo({
+      url: '/pages/detail/index?news_id=' + this.data.myPublicList[e.currentTarget.dataset.index].news_id,
     })
   },
 

@@ -12,7 +12,7 @@
     <!-- 用户姓名输入 -->
     <view class="secion">
       <view class="section__title">姓名</view>
-      <input name="userName" placeholder="输入真实姓名可以让别人快速了解你哦" value="{{userInfo.userName}}"/>
+      <input name="userName" placeholder="输入真实姓名可以让别人快速了解你哦" value="{{userInfo.userName}}" maxlength="10"/>
     </view>
 
     <!-- 选择性别 -->
@@ -62,35 +62,34 @@
     <!-- 输入参加过的比赛 -->
     <view class="secion">
       <view class="section__title">参加过的比赛或项目</view>
-      <input name="experience" placeholder="在此展示自己的职业历程吧" value="{{userInfo.experience}}" />
+      <input name="experience" placeholder="在此展示自己的职业历程吧" value="{{userInfo.experience}}" maxlength="50"/>
     </view>
 
     <!-- qq -->
     <view class="secion">
       <view class="section__title">QQ</view>
-      <input name="qq" placeholder="" value="{{userInfo.qq}}"/>
+      <input name="qq" placeholder="" value="{{userInfo.qq}}" maxlength="13" type="number" />
     </view>
     <!-- 微信 -->
     <view class="secion">
       <view class="section__title">微信</view>
-      <input name="weixin" placeholder="" value="{{userInfo.weixin}}"/>
+      <input name="weixin" placeholder="" value="{{userInfo.weixin}}" maxlength="25"/>
     </view>
     <!-- 电话 -->
     <view class="secion">
       <view class="section__title">电话</view>
-      <input name="tel" placeholder="" value="{{userInfo.tel}}"/>
+      <input name="tel" placeholder="" value="{{userInfo.tel}}" type="number" maxlength="15"/>
     </view>
 
     <!-- 个人详细介绍 -->
     <view class="secion">
       <view class="section__title">个人详细介绍</view>
-      <textarea name="introduction" placeholder="还有要补充的在这里说吧" rows="5" value="{{userInfo.introduction}}"/>
+      <textarea name="introduction" placeholder="还有要补充的在这里说吧" rows="5" value="{{userInfo.introduction}}" maxlength="150"/>
     </view>
 
     <!-- 确定和重置按钮 -->
     <view class="btn-area">
       <button formType="submit">确定</button>
-      <button formType="reset">重置</button>
     </view>
 
   </form>

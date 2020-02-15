@@ -1,5 +1,5 @@
  <!-- 这里是公告内容板块 -->
-    <view class="notice">
+    <view class="notice"  bindtap="detail">
     <!-- 这里是公告的标题 -->
       <view class="title">{{post.title}}</view>
       <!-- 这里是公告的图标处 -->
@@ -29,7 +29,7 @@
         <text class="date">{{post.post_time}}</text>
 
         <!-- <button bindtap="detail"> -->
-        <text class="read_more" bindtap="detail" >Read More</text> 
+        <text class="read_more" >Read More</text> 
         <!-- </button> -->
         
       </view>

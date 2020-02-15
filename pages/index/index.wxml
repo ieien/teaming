@@ -11,6 +11,9 @@
     <notice post="{{postList[index]}}"></notice>
   </view>
 
+  <!-- 空白的占位框，防止屏幕不能滑动的情况下学院滚动条遮住第三个帖子 -->
+  <view class="blank"></view>
+
   <!-- 这里写了滚动区域 -->
   <view  style="display:{{show}};flex-direction: row;">
     <sort collegeList='{{collegeList}}' ></sort>

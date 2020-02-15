@@ -54,7 +54,7 @@
   margin-bottom: 16rpx;
 }
 
-.grade{
+.college{
   font-size: 28rpx;
   color: #B5B1B1;
   margin-left: 42rpx;

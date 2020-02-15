@@ -22,10 +22,10 @@
 
   <!--本学院和意向本学院按钮-->
   <view class="third_block">
-    <view class="left_txt">
+    <view class="left_txt" bindtap="thisCollege" style="background-color:{{left}}">
       <text>本学院帖子</text>
     </view>
-    <view class="rigth_txt">
+    <view class="rigth_txt" bindtap="aimThisCollege" style="background-color:{{right}}">
       <text>意向本学院帖子</text>
     </view>
   </view>
@@ -35,12 +35,13 @@
     <notice post="{{postList[index]}}"></notice>
   </view>
 
+  <!-- 空白的占位框，防止屏幕不能滑动的情况下学院滚动条遮住第三个帖子 -->
+  <view class="blank"></view>
+
   <!-- 这里写了滚动区域 -->
   <view  style="display:{{show}};flex-direction: row;">
     <sort collegeList='{{collegeList}}'></sort>
   </view>
-  
-  <!-- 下面应该添加一个自己写的tabbar -->
 
 </view>
 

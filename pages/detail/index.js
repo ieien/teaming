@@ -7,32 +7,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: "天梯赛在线找队友",
-    bisai: "../../image/detail_image/bisai.png",
-    touxiang: "../../image/detail_image/touxiang.png",
-    name: "李路雨",
-    grade: "17级-软件学院",
-    match: "天梯赛",
-    matchtype: "国家B类",
-    ren: "../../image/detail_image/ren.png",
-    zhuangtai: "../../image/detail_image/zhuangtai.png",
-    xueyuan: "../../image/detail_image/xueyuan.png",
-    number: "2",
-    state: "还在找指导老师",
-    college: "软件学院",
-    content_expression: "碗大宽无影不想给你机会先别怼就散了吧听完这首歌就洗洗睡我这一生漂泊四海 看淡了今朝月高高的挂无暇人生能有几次机会啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊相聚甚是少情谊别轻易放啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊掉门前雨落下我浪迹天涯有儿女情长悲欢离合呀一声笑啊啊啊啊啊傲江湖闯江湖分出胜负你看这个面它又又宽就像这个碗它又大又圆你看这个面它又长又宽就像这个碗它又大啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊又圆",
-    time: "2019-10-12",
-    zhichi: "../../image/detail_image/zhichi.png",
-    jubao: "../../image/detail_image/jubao.png",
-    text: "../text/text1",
+    postDetail: {},
+    //postDetail: {
+    // aim_college_name: "对象学院"
+    // avatar: "用户头像"
+    // college_name: "用户所在学院学院"
+    // com_logo: "比赛logo"
+    // com_name: "竞赛名字"
+    // detail: "帖子详情"
+    // level: "比赛等级"
+    // likes: 支持量
+    // news_id: 帖子id
+    // news_remain_time: "剩余展示时间"
+    // num_people: "目前人数"
+    // post_time: "发表时间"
+    // stage: "进展"
+    // title: "标题"
+    // user_id: "发布者id"
+    // user_name: "发布者名字"
+    // views: 浏览量
+    //}
+    ren: "/image/detail_image/ren.png",
+    zhuangtai: "/image/detail_image/zhuangtai.png",
+    xueyuan: "/image/detail_image/xueyuan.png",
+    zhichi: "/image/detail_image/zhichi.png",
+    jubao: "/image/detail_image/jubao.png",
   },
 
 
   ding: function () {
-    wx.showToast({
-      title: '谢谢支持',
-      icon: 'success',
-      duration: 2000
+    const _this = this;
+    wx.request({
+      url: 'https://teaming.malateam.cn/src/likes.php',
+      data: {
+        news_id: _this.data.postDetail.news_id
+      },
+      success(res){
+        if(res.data.code === 0){
+          wx.showToast({
+            title: '谢谢支持',
+            icon: 'success',
+            duration: 2000
+          })
+        }else{
+          console.log('点赞失败');
+        }
+      }
     })
   },
 
@@ -54,13 +74,46 @@ Page({
     })
   },
 
+  /**
+   * 通过帖子id获取帖子的详细信息。(数据库会自动更新浏览量)
+   */
+  getPostDetail: function(id){
+    const _this = this;
+    wx.request({
+      url: 'https://teaming.malateam.cn/src/post_detail.php',
+      data: {
+        news_id: id
+      },
+      success(res){
+        //console.log(res);
+        if(res.data.code === 0){
+          _this.setData({
+            postDetail: res.data.data
+          })
+        }else{
+          console.log('获取信息失败');
+        }
+      }
+    })
+  },
+
+  /**
+   * 通过发布者id查看发布者详细信息
+   */
+  lookPublisher: function(){
+    const _this = this;
+    wx.navigateTo({
+      url: '/pages/publish/publisher/publisher?publisher_id=' + _this.data.postDetail.user_id,
+    })
+  },
+
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getPostDetail(options.news_id);
   },
 
   /**

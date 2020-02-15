@@ -1,0 +1,28 @@
+<!--pages/publish/publisher/publisher.wxml-->
+<!-- 查看贴子发布者信息界面 -->
+
+<view class="view2">
+
+  <view class="view1"></view>
+  <image class="touxiang" src="{{userInfo.avatar}}"></image>
+  <view class="nickname">{{userInfo.user_name}}</view>
+
+  <!-- <image class="eye" src="/image/eye.png"></image> -->
+  <view class="academy">{{userInfo.college_name}}</view>
+  <textarea class="information" value="{{userInfo.user_introduction}}"></textarea>
+
+  <view class="border"></view>
+  <image class="tupian a1" src="/image/username.png"></image>
+  <view class="wenzi b1">{{userInfo.user_name}}</view>
+  <image class="tupian a2" src="/image/grade.png"></image>
+  <view class="wenzi b2">{{userInfo.grade}}</view>
+  <image class="tupian a3" src="/image/sex.png"></image>
+  <view class="wenzi b3">{{userInfo.sex}}</view>
+  <image class="tupian a4" src="/image/experience.png"></image>
+  <view class="wenzi b4">{{userInfo.experience}}</view>
+  <image class="tupian a5" src="/image/qq.png"></image>
+  <view class="wenzi b5">{{userInfo.qq}}</view>
+  <image class="tupian a6" src="/image/wechat.png"></image>
+  <view class="wenzi b6">{{userInfo.weixin}}</view>
+
+</view>

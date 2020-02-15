@@ -13,15 +13,17 @@ Page({
     college: '', //学院名字
     logo: '',  //学院logo
     back_img: "/image/college/back_img.jpg",
-
     collegeList: [], 
 
     page: 1, //页数，首页要展示的帖子的数量，1页10个帖子
     haveMore: true, //表示还有更多数据（还可上拉页面）
     postList: [], //帖子列表
+    isThisCollege: true, //是否是本学院的帖子（意向本学院就是非本学院）
+    left: "rgb(210, 200, 230)", //左边按钮的颜色
+    right: "white",  //右边按钮的颜色
   },
 
-  //跳转到学院比赛页面
+  //跳转到学院比赛列表页面
   getIntoCompetition: function () {
     var id = this.data.id;
     var name = this.data.college;
@@ -62,7 +64,8 @@ Page({
       url: 'https://teaming.malateam.cn/src/find_posts_in_college.php',
       data: {
         page: _this.data.page, //页数
-        college_id: _this.data.id  //学院id
+        college_id: _this.data.id,  //学院id
+        is_this_college: _this.data.isThisCollege, //本学院还是意向本学院
       },
       success(res) {
         //console.log(res.data.data);
@@ -70,8 +73,6 @@ Page({
         if (res.data.code === 0) {
           var addPosts = _this.data.postList;
           addPosts = addPosts.concat(res.data.data);
-          //console.log("addPosts");
-          //console.log(addPosts);
           _this.setData({
             postList: addPosts
           })
@@ -81,10 +82,54 @@ Page({
             haveMore: false
           })
         } else {
-          // 数据库操作失败
+          console.log('查询失败');
         }
       }//success
     })//request
+  },
+
+  /**
+   * 本学院帖子按钮
+   */
+  thisCollege: function(){
+    if(this.data.isThisCollege){
+      this.setData({
+        postList: [],
+        page: 1
+      })
+      this.getPosts();
+    }else{
+      this.setData({
+        postList: [],
+        isThisCollege: true,
+        page: 1,
+        left: "rgb(210, 200, 230)",
+        right: "white"
+      })
+      this.getPosts();
+    }
+  },
+
+  /**
+   * 意向本学院帖子按钮
+   */
+  aimThisCollege: function(){
+    if (this.data.isThisCollege) {
+      this.setData({
+        postList: [],
+        isThisCollege: false,
+        page: 1,
+        left: "white",
+        right: "rgb(210, 200, 230)"
+      })
+      this.getPosts();
+    } else {
+      this.setData({
+        postList: [],
+        page: 1
+      })
+      this.getPosts();
+    }
   },
 
 
@@ -93,7 +138,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //console.log("当前索引---index："+options.index);
     this.getCollegeList();
     this.getCollege(options.index);
     this.getPosts();

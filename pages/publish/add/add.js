@@ -81,16 +81,44 @@ Page({
    * 表单提交
    */
   formSubmit: function(e) {
-    //测试输出
-    //console.log('form发生了submit事件，携带数据为：', e.detail.value);
-    //将表单中的信息提交至服务器，并判断是否提交成功
-    //console.log("开始更新信息");
-    this.publishNews(e.detail.value)
-
+    // 检验表单信息格式是否正确
+    if (e.detail.value.num_people == null || e.detail.value.num_people == ''){
+      //此处一个弹框提示
+      wx.showToast({
+        title: '目前人数不能为空',
+        icon: 'none',
+        duration: 2500,
+      })
+    }else if (this.data.beSelectCompetition == null || !(this.data.beSelectCompetition).hasOwnProperty('id')) {
+      //此处一个弹框提示
+      wx.showToast({
+        title: '赛事名称不能为空',
+        icon: 'none',
+        duration: 2500,
+      })
+    }else if (e.detail.value.title.length < 1 || e.detail.value.title.length == null) {
+      //此处一个弹框提示
+      wx.showToast({
+        title: '标题不能为空',
+        icon: 'none',
+        duration: 2500,
+      })
+    }  else if (e.detail.value.detail.length < 1 || e.detail.value.detail.length == null) {
+      //此处一个弹框提示
+      wx.showToast({
+        title: '内容不能为空',
+        icon: 'none',
+        duration: 2500,
+      })
+    }else{
+      //将表单中的信息提交至服务器，并判断是否提交成功
+      this.publishNews(e.detail.value);
+    }
   },
 
   /**
-   * 发布组队消息，表单中点击确认按钮时调用此方法。参数：newsInfo，从表单中获取的发布信息对象。
+   * 发布组队消息，表单中点击确认按钮时调用此方法。
+   * 参数：newsInfo，从表单中获取的发布信息对象。
    * 将发布的信息上传至服务器，并判断是否提交成功
    */
   publishNews: function(newsInfo) {
@@ -107,7 +135,8 @@ Page({
         com_id: _this.data.beSelectCompetition.id, //赛事id
         num_people: newsInfo.num_people, //目前人数
         aim_college: _this.data.beSelectCollege.id, //意向学院id
-        detail: newsInfo.detail //需求详情
+        detail: newsInfo.detail, //需求详情
+        stage: (newsInfo.stage==''||newsInfo.stage==null)?'准备中':newsInfo.stage //进展
       },
       //请求参数传送方式
       method: "POST",
@@ -138,8 +167,6 @@ Page({
             title: 'fail',
             content: '消息发布失败',
             showCancel: false, //不显示取消按钮，只能确定
-            success(res) {
-            }
           }) //
         }
       }, //success

@@ -4,39 +4,37 @@
   <view class="view1"></view>
   <image class="touxiang" src="{{avatar}}"></image>
   
-  <view class="nickname">
-    {{userName}}
-  </view>
+  <view class="nickname">{{userName}}</view>
   <navigator url="../index/index" hover-class="navigator-hover">
-    <image class="tongzhi" src="../../../image/tongzhi_1.png"></image>
+    <image class="tongzhi" src="/image/tongzhi_1.png"></image>
   </navigator>
 
   <view class="view2 p1"></view>
-  <image class="ziliao a1" src="../../../image/details.png"></image>
+  <image class="ziliao a1" src="/image/details.png"></image>
   <view class="wenben a1">详细信息</view>
   <navigator url="../userDetails/userDetails" hover-class="navigator-hover">
-    <image class="jiantou a1" src="../../../image/lianjie.png"></image>
+    <image class="jiantou a1" src="/image/lianjie.png"></image>
   </navigator>
 
   <view class="view2 p2"></view>
-  <image class="ziliao a2" src="../../../image/instructions.png"></image>
+  <image class="ziliao a2" src="/image/instructions.png"></image>
   <view class="wenben a2">使用说明</view>
   <navigator url="../userGuide/userGuide" hover-class="navigator-hover">
-    <image class="jiantou a2" src="../../../image/lianjie.png"></image>
+    <image class="jiantou a2" src="/image/lianjie.png"></image>
   </navigator>
 
   <view class="view2 p3"></view>
-  <image class="ziliao a3" src="../../../image/feedback.png"></image>
+  <image class="ziliao a3" src="/image/feedback.png"></image>
   <view class="wenben a3">意见反馈</view>
   <navigator url="../feedback/feedback" hover-class="navigator-hover">
-    <image class="jiantou a3" src="../../../image/lianjie.png"></image>
+    <image class="jiantou a3" src="/image/lianjie.png"></image>
   </navigator>
 
   <view class="view2 p4"></view>
-  <image class="ziliao a4" src="../../../image/anenst.png"></image>
+  <image class="ziliao a4" src="/image/anenst.png"></image>
   <view class="wenben a4">关于我们</view>
   <navigator url="../about/about" hover-class="navigator-hover">
-    <image class="jiantou a4" src="../../../image/lianjie.png"></image>
+    <image class="jiantou a4" src="/image/lianjie.png"></image>
   </navigator>
   <!-- url="../about/about"  -->
 
