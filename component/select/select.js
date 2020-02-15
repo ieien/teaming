@@ -13,17 +13,28 @@ Component({
     // 要显示的目标，值建议设为调用组件时传过来的数组名(propArray属性的数组名)
     target: {
       type: String,
-    }
+    },
+
   },
 
   /**
-   * 组件的初始数据
+   * 组件的私有数据
    */
   data: {
     down_img:"/image/add_page/down.png",
     selectShow: false,//初始option不显示
     nowText: "请选择",//初始内容
     animationData: {}//右边箭头的动画
+  },
+
+  /**
+   * 声明周期函数
+   */
+  lifetimes: {
+    // 在组件实例进入页面节点树时执行
+    attached: function () {
+
+    } 
   },
 
 

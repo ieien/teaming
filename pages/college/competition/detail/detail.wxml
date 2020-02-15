@@ -21,7 +21,7 @@
     </view>
     <!-- 分隔符 -->
     <view class="com-text">
-      <text>{{content}}</text>
+      <textarea disabled="true">{{content}}</textarea>
     </view>
   </view>
 

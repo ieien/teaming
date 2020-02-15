@@ -9,7 +9,7 @@ Page({
     page: 1, //页数，首页要展示的帖子的数量，1页10个帖子
     haveMore: true, //表示还有更多数据（还可上拉页面）
     postList: [], //帖子列表
-    // [{
+    // postList: [{
     //   avatar：用户头像、
     //   user_name：名字、
     //   college_name：学院，
@@ -100,7 +100,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   // console.log("onShow");
     
   },
 
@@ -124,16 +123,13 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      page: 1, //页数，首页要展示的帖子的数量，1页10个帖子
+      haveMore: true, //表示还有更多数据（还可上拉页面）
+      postList: [], //帖子列表
+    })
+    this.getPosts();
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
 
   // 滑动监听
   onPageScroll: function (ev) {

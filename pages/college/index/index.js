@@ -175,7 +175,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      page: 1, //页数，首页要展示的帖子的数量，1页10个帖子
+      haveMore: true, //表示还有更多数据（还可上拉页面）
+      postList: [], //帖子列表
+    })
+    this.getPosts();
   },
 
   /**

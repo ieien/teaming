@@ -5,5 +5,6 @@
     "searchbar": "../../component/search_bar/searchbar",
     "sort": "../../component/sort_bar/sort",
     "notice": "../../component/notice/notice"
-  }
+  },
+  "enablePullDownRefresh": true
 }

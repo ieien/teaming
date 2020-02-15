@@ -1,0 +1,161 @@
+/* pages/post/modify/modify.wxss */
+
+page {
+  background-color: #dfdada;
+}
+
+.lo-1 {
+  position: absolute;
+  left: 20rpx;
+  top: 14rpx;
+  font-weight: bold;
+  font-size: 30rpx;
+  color: rgb(150, 150, 150, 1);
+}
+
+.line-1 {
+  position: absolute;
+  top: 90rpx;
+  width: 100%;
+  height: 4rpx;
+  background-color: #bbb;
+}
+
+.people {
+  position: absolute;
+  left: 20rpx;
+  top: 106rpx;
+  font-size: 30rpx;
+}
+
+.weui-input {
+  font-size: 30rpx;
+}
+
+.page-section {
+  position: absolute;
+  left: 200rpx;
+  top: 100rpx;
+  width: 200rpx;
+  border-radius: 40rpx 40rpx 40rpx 40rpx;
+  border: 4rpx solid rgba(187, 187, 187, 1);
+  background-color: white;
+  text-indent: 30rpx;
+}
+
+.bi-sai {
+  position: absolute;
+  left: 20rpx;
+  top: 165rpx;
+  font-size: 30rpx;
+}
+
+.down {
+  position: absolute;
+  left: 200rpx;
+  top: 165rpx;
+  font-size: 30rpx;
+}
+
+.yi-xiang {
+  position: absolute;
+  left: 20rpx;
+  top: 235rpx;
+  font-size: 30rpx;
+}
+
+.xue-yuan {
+  position: absolute;
+  left: 200rpx;
+  top: 220rpx;
+}
+
+.line-2 {
+  position: absolute;
+  top: 320rpx;
+  width: 100%;
+  height: 4rpx;
+  background-color: #bbb;
+}
+
+.tit {
+  position: absolute;
+  left: 15rpx;
+  top: 330rpx;
+  font-size: 36rpx;
+  color: rgb(151, 148, 148, 1);
+  font-weight: bold;
+}
+
+.section-tit {
+  position: absolute;
+  left: 34rpx;
+  top: 390rpx;
+  line-height: 20px;
+  background-color: white;
+  font-size: 28rpx;
+  text-align: left;
+  border: 2rpx solid rgba(187, 187, 187, 1);
+  text-indent: 25rpx;
+}
+
+.line-3 {
+  position: absolute;
+  top: 540rpx;
+  width: 100%;
+  height: 4rpx;
+  background-color: #bbb;
+}
+
+.di {
+  position: absolute;
+  left: 15rpx;
+  top: 550rpx;
+  font-size: 36rpx;
+  color: rgb(151, 148, 148, 1);
+  font-weight: bold;
+}
+
+.section-di {
+  position: absolute;
+  left: 34rpx;
+  top: 620rpx;
+  background-color: white;
+  line-height: 20px;
+  font-size: 28rpx;
+  text-align: left;
+  border: 2rpx solid rgba(187, 187, 187, 1);
+  text-indent: 25rpx;
+}
+
+.stage{
+  position: absolute;
+  left: 20rpx;
+  top: 880rpx;
+  font-size: 28rpx;
+}
+.stage-input{
+   position: absolute;
+  left: 200rpx;
+  top: 875rpx;
+  width: 300rpx;
+  border-radius: 40rpx 40rpx 40rpx 40rpx;
+  border: 4rpx solid rgba(187, 187, 187, 1);
+  background-color: white;
+  text-indent: 30rpx;
+}
+
+.an-niu {
+  position: absolute;
+  top: 960rpx;
+  width: 100%;
+  left: 2rpx;
+  height: 72rpx;
+  border-radius: 10rpx;
+  background-color: rgba(37, 155, 36, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 28rpx;
+  text-align: center;
+  font-family: Microsoft Yahei;
+  border: 2rpx solid rgba(187, 187, 187, 1);
+}

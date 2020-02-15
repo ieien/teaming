@@ -29,7 +29,6 @@ width: 100%;
 }
 .sort{
   margin-top: 10rpx;
-  margin-inline-start: 340rpx;
   margin-inline-end: 30rpx;
   height: 100rpx;
   width: 100rpx;
@@ -44,6 +43,8 @@ width: 100%;
 .name_college{
   margin-top: 70rpx;
   font-weight: 700;
+  width: 500rpx;
+  height: 70rpx;
 }
 .two_bt{
   background-color: white;

@@ -2,14 +2,11 @@
 .page{
   height: 100%;
   width: 100%;
- 
 }
 
 .frist_box{
-  height: 270rpx;
   width: 100%;
-  /* box-shadow:8rpx 8rpx 20rpx rgb(114, 112, 112); */
- border-bottom: 8rpx solid rgba(170, 170, 170, 1);
+  border-bottom: 8rpx solid rgba(170, 170, 170, 1);
 }
 
 .title{
@@ -21,23 +18,27 @@
   margin-left: 30rpx;
   margin-bottom: 20rpx;
 }
+.edit{
+  width: 25%;
+  margin-left: 75%;
+  padding-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 28rpx;
+  color: #B5B1B1;
+}
 
 .box{
   display: flex;
   flex-direction: row;
-  height: 155rpx;
-  /* border:1px solid #00F; */
-  
 }
 
 .Personal_information{
-  /* flex-grow:4; */
   width: 50%;
   height: 155rpx;
   border-right: 1px solid #BBBBBB;
-  /* box-shadow:4rpx 4rpx 10rpx #BBBBBB; */
-  /* border:1px solid #00F; */
-
 }
 
 .touxiang{
@@ -61,13 +62,8 @@
 }
 
 .Competition_information{
-  /* flex-grow: 4; */
   width: 50%;
   height: 155rpx;
-  /* box-shadow:4rpx 4rpx 10rpx #BBBBBB; */
-
-  /* border:1px solid #00F; */
-
 }
 
 .bisai{
@@ -103,7 +99,6 @@
 .number{
   width: 88%;
   height: 25%;
-  /* box-shadow:4rpx 4rpx 10rpx #BBBBBB; */
   border-bottom: 2rpx solid rgba(170, 170, 170, 1);
   display: flex;
   align-items: center;
@@ -124,7 +119,6 @@
 .state{
   width: 88%;
   height: 25%;
-  /* box-shadow:4rpx 4rpx 10rpx #BBBBBB; */
    border-bottom: 2rpx solid rgba(170, 170, 170, 1);
   display: flex;
   align-items: center;
@@ -146,8 +140,7 @@
 .college{
   width: 88%;
   height: 25%;
-  /* box-shadow:4rpx 4rpx 10rpx #BBBBBB; */
-   border-bottom: 2rpx solid rgba(170, 170, 170, 1);
+  border-bottom: 2rpx solid rgba(170, 170, 170, 1);
   display: flex;
   align-items: center;
 }

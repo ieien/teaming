@@ -1,0 +1,40 @@
+<!--pages/post/modify/modify.wxml-->
+<!-- 修改帖子的页面 -->
+<text class="lo-1">修改后信息的展示时间将延长至10天</text>
+<view class="line-1"></view>
+<view class="line-3"></view>
+
+<form bindsubmit="formSubmit">
+
+  <text class="people">目前人数：</text>
+  <view class="page-section">
+    <view>
+      <input name="num_people" class="weui-input" type="number" maxlength="1" placeholder="目前人数" value="{{num_people}}"/>
+    </view>
+  </view>
+
+  <text class="bi-sai">赛事名称：</text>
+  <view class="down">{{com_name}}</view>
+
+  <text class="yi-xiang">意向学院：</text>
+  <select class="xue-yuan" propArray='{{collegeList}}' target='collegeList'  bind:beSelection='getSelection'></select>
+
+  <view class="line-2"></view>
+  <text class="tit">标题/Title</text>
+  <view class="section-tit">
+    <textarea name="title" maxlength="20" bindblur="bindTextAreaBlur" style="height: 4em" placeholder="简单讲解你的需求，20字以内" value="{{title}}"/>
+  </view>
+
+  <text class="di">详细介绍/Detailed expression</text>
+  <view class="section-di">
+    <textarea name="detail" maxlength="300" bindblur="bindTextAreaBlur" style="height: 8em" placeholder="详细的描述你的项目以及你需要什么样的队友,300字以内" value="{{detail}}"/>
+  </view>
+
+  <text class="stage">发展阶段：</text>
+  <view class="stage-input">
+    <input name="stage" class="weui-input" maxlength="15" placeholder="目前进展阶段" value="{{stage}}"/>
+  </view>
+
+  <button class="an-niu" type="primary" formType="submit" plain="{{false}}"> 确认修改 </button>
+
+</form>

@@ -80,9 +80,12 @@ width: 100%;
   margin-left: 70rpx;
   border: 4rpx solid rgba(187, 187, 187, 1);
 }
-.com-text text{
+.com-text textarea{
   font-size: 30rpx;
   color: grey;
+  width: 620rpx;
+  height: 300rpx;
+  overflow: scroll;
 }
 
 

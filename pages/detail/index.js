@@ -1,14 +1,18 @@
 // pages/detail/index.js
 // 发布的信息详情页面
 
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    news_id: 0,
     postDetail: {},
     //postDetail: {
+    // aim_college: 意向学院id
     // aim_college_name: "对象学院"
     // avatar: "用户头像"
     // college_name: "用户所在学院学院"
@@ -27,6 +31,8 @@ Page({
     // user_name: "发布者名字"
     // views: 浏览量
     //}
+
+    isMyPost: false, //是否为我发表的帖子（判断页面中是否显示修改删除按钮）
     ren: "/image/detail_image/ren.png",
     zhuangtai: "/image/detail_image/zhuangtai.png",
     xueyuan: "/image/detail_image/xueyuan.png",
@@ -85,11 +91,16 @@ Page({
         news_id: id
       },
       success(res){
-        //console.log(res);
+        // console.log(res);
         if(res.data.code === 0){
           _this.setData({
             postDetail: res.data.data
           })
+          if (res.data.data.user_id == app.globalData.openid){
+            _this.setData({
+              isMyPost: true
+            })
+          }
         }else{
           console.log('获取信息失败');
         }
@@ -107,12 +118,79 @@ Page({
     })
   },
 
+  /**
+   * 修改帖子
+   */
+  modifyPost: function(){
+    if (this.data.postDetail.user_id == app.globalData.openid){
+      var post = {
+        news_id: this.data.postDetail.news_id,
+        num_people: this.data.postDetail.num_people,
+        com_name: this.data.postDetail.com_name,
+        aim_college_id: this.data.postDetail.aim_college,
+        title: this.data.postDetail.title,
+        detail: this.data.postDetail.detail,
+        stage: this.data.postDetail.stage,
+      }
+      var postData = JSON.stringify(post);
+      wx.navigateTo({
+        url: '/pages/post/modify/modify?post=' + postData,
+      })
+    }
+  },
+
+  /**
+   * 删除帖子
+   */
+  deletePost: function(){
+    if (this.data.postDetail.user_id == app.globalData.openid) {
+      const _this = this;
+      wx.showModal({
+        title: '提示',
+        content: '您确定删除吗？',
+        success(rs) {
+          if (rs.confirm) {
+            wx.request({
+              url: 'https://teaming.malateam.cn/src/delete_post.php',
+              data: {
+                news_id: _this.data.postDetail.news_id
+              },
+              success(res) {
+                //console.log(res);
+                if (res.data.code === 0) {
+                  wx.showToast({
+                    title: '删除成功',
+                    icon: "success",
+                    duration: 1500,
+                  })
+                  setTimeout(function () {
+                    wx.navigateBack({   //返回上一页
+                      delta: 1
+                    })
+                  }, 1500) //延迟时间1.5秒
+                } else {
+                  wx.showToast({
+                    title: '删除失败',
+                    duration: 2000
+                  })
+                }
+              }
+            })
+          }
+        }
+      })
+    }
+  },
+
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      news_id: options.news_id
+    })
     this.getPostDetail(options.news_id);
   },
 
@@ -127,7 +205,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getPostDetail(this.data.news_id);
   },
 
   /**

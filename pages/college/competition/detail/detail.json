@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "notice": "/component/notice/notice"
-  }
+  },
+  "enablePullDownRefresh": true
 }

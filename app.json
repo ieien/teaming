@@ -6,6 +6,7 @@
       "pages/publish/publisher/publisher",
       "pages/college/index/index",
       "pages/detail/index",
+      "pages/post/modify/modify",
       "pages/college/competition/detail/detail",
       "pages/college/competition/index/index",
       "pages/user/index/index",
@@ -17,7 +18,7 @@
       "pages/user/message/message"
     ],
     "window": {
-      "backgroundTextStyle": "light",
+      "backgroundTextStyle": "dark",
       "navigationBarBackgroundColor": "#4281A4",
       "navigationBarTitleText": "NCHU-Teaming",
       "navigationBarTextStyle": "black"
