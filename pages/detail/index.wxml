@@ -13,15 +13,17 @@
 
     <view class="box">
       <view class="Personal_information" bindtap="lookPublisher">
-        <view hover-class="none">
+        <view class="box_left_image" hover-class="none">
           <image class="touxiang" src="{{postDetail.avatar}}"></image>
         </view>
-        <view hover-class="none">
-          <view class="name">{{postDetail.user_name}}</view>
-        </view>
-        <view hover-class="none">
-          <veiw class="college">{{postDetail.college_name}}</veiw>
-        </view>
+        <view class="box_left_content">
+            <view hover-class="none">
+              <view class="name">{{postDetail.user_name}}</view>
+            </view>
+            <view hover-class="none">
+              <veiw class="college">{{postDetail.college_name}}</veiw>
+            </view>
+          </view>
       </view>
 
       <view class="Competition_information">
@@ -29,12 +31,14 @@
           <image class="bisai" src="{{postDetail.com_logo}}"></image>
         </view>
 
-        <view hover-class="none">
-          <view class="match">{{postDetail.com_name}}</view>
-        </view>
+        <view class="box_right_content">
+          <view hover-class="none">
+            <view class="match">{{postDetail.com_name}}</view>
+          </view>
 
-        <view hover-class="none">
-          <view class="matchtype">{{postDetail.level}}</view>
+          <view hover-class="none">
+            <view class="matchtype">{{postDetail.level}}</view>
+          </view>
         </view>
       </view>
     </view>
@@ -69,7 +73,7 @@
     </view>
     <view class="time">{{postDetail.post_time}}</view>
 
-    <view class="bottom" bindtap="ding">
+    <view class="bottom">
       <view class="zhichi">
         <image class="zhichi_image" src="{{zhichi}}" bindtap="ding"></image>
         <view class="zhichi_font">顶他上去</view>
@@ -80,6 +84,7 @@
         <view class="jubao_font">举报</view>
       </view>
     </view>
+    <!-- <button open-type="contact">客服</button> -->
   </view>
 
 </view>

@@ -1,5 +1,3 @@
-<!--pages/user/message/message.wxml-->
-
 <view class="first">
 <mess></mess>
 <mess></mess>

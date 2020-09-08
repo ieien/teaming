@@ -1,5 +1,3 @@
-/* pages/user/message/message.wxss */
-
 .first{
   display: flex;
   flex-direction: column;

@@ -1,8 +1,14 @@
 <!--pages/user/about/about.wxml-->
-<view class="view1"></view>
+<view class="view1">
 <image class="img" src="../../../image/aboutus.jpg"></image>
-<textarea class="view2" value="我们为什么要做这个软件"></textarea>
-<view class="view3">版本号</view>
-<textarea class="view4" value="吧啦吧啦"></textarea>
-<view class="view5">团队介绍</view>
-<textarea class="view6" value="bbbbbbbb....."></textarea>
+<view class="viewp">
+<view class="view3">产品目的</view>
+<textarea class="view2" value="让本校同学能够在网上快速、准确的知晓各个学院比赛的基本信息，解决团队型比赛队友难找的问题，让团队多元化。致力于打破“组员全是同学院”现象！" disabled="true"></textarea>
+<view class="view3">团队介绍</view>
+<textarea class="view2" disabled="true" value="17204205 李路雨  17204206 刘世昊 17204208陈起涛  17204213 李彪 17204215 廖智武 17204219 毛敬恩">
+</textarea>
+<view class="view3">特别鸣谢</view>
+<textarea class="view2" disabled="true" value="指导老师-章志文">
+</textarea>
+</view>
+</view>

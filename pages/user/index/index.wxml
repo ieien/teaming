@@ -16,11 +16,11 @@
       <text class="college">{{college}}</text>
     </view>
 
-    <view>
+    <!-- <view>
       <navigator url="../message/message" hover-class="navigator-hover">
         <image class="tongzhi" src="/image/tongzhi_1.png"></image>
       </navigator>
-    </view>
+    </view> -->
 
   </view>
 
@@ -46,7 +46,7 @@
       <navigator url="../feedback/feedback" hover-class="navigator-hover">
         <view class="view2 p">
           <image class="ziliao" src="/image/feedback.png"></image>
-          <view class="wenben">意见反馈</view>
+          <view class="wenben" open-type='feedback' >意见反馈</view>
           <image class="jiantou" src="/image/lianjie.png"></image>
         </view>
       </navigator>
@@ -61,7 +61,7 @@
       </navigator>
     </view>
 
-    <navigator url="../about/about" hover-class="navigator-hover">
+    <navigator url="../Contact/Contact" hover-class="navigator-hover">
       <view class="view2 p e">
         <image class="ziliao" src="/image/call.png"></image>
         <view class="wenben">联系我们</view>

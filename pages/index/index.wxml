@@ -3,9 +3,34 @@
 
 <view class="main">
 <!-- 公共头部 -->
-  <searchbar> </searchbar>
-  <Title></Title>
+  <!-- <searchbar> </searchbar> -->
+  <!-- 这里采用最新的搜索框 begin-->
+  <import src="/wxSearch/wxSearch.wxml"/>
+<view class="wxSearch-section">
+  <view class="wxSearch-pancel">
+    <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="搜索" />
+    <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true"> 搜 </button>
+  </view>
+</view>
+<template is="wxSearch" data="{{wxSearchData}}"/>
+  <!-- 这里采用最新的搜索框 end-->
+  <!-- <Title></Title> -->
+  <!-- 这里采用最新标题 begin -->
+  
+<!-- 主页图片滚动图 -->
+<swiper class="swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"  >
+  <block wx:for="{{imgUrls}}" wx:key="key">
+    <swiper-item class="slide">
+      <image src="{{item}}" class="slide-image" mode='aspectFill' width="100%" height="150rpx"/>
+    </swiper-item>
+  </block>
+</swiper>
 
+  <!-- 这里采用最新标题 end -->
+  <!-- 测试滑动效果 -->
+  <!-- <button bindtap="open" style="float:left,width=40rpx;">slideUp</button>
+  <button bindtap="close" style="float:right,width=40rpx;">slideDown</button> -->
   <!-- 内容板块 -->
   <view class="set" wx:for="{{postList}}" wx:key="news_id">
     <notice post="{{postList[index]}}"></notice>
@@ -15,8 +40,71 @@
   <view class="blank"></view>
 
   <!-- 这里写了滚动区域 -->
-  <view  style="display:{{show}};flex-direction: row;">
+  <!-- <view  style="display:{{show}};flex-direction: row;">
     <sort collegeList='{{collegeList}}' ></sort>
+  </view> -->
+
+
+  <!-- <view  style="{{maskStyle}}" bindtap="{{show==flex?'slideUp':'slideDown'}}"> 
+
+   <view class="box" animation="{{boxAnimation}}">
+
+   <view class="tab"> -->
+    <!-- <sort collegeList='{{collegeList}}' class="tab"></sort> -->
+    <!-- <text>这里用来测试</text>
+    </view>
+
+    </view>
+</view> -->
+ 
+<view class="mask" style="{{maskStyle}}" bindtap="close"></view>
+<view class="box" animation="{{boxAnimation}}">
+    <!-- <view class="tab"> -->
+    
+     <!-- <sort collegeList='{{collegeList}}'></sort> -->
+
+<!-- 这里我来移动之前写好的组件sort--这里是begin -->
+
+<!-- 这里用来写下面的学院列表滚动条 -->
+
+<view class="nav_wrap" >
+
+  <view class="Nchu {{currentSelect=='NCHU'?'active':''}}" bindtap="selectNCHU" data-id='NCHU'>
+    <image src="../../image/Nchu.png" mode="widthFix"></image>
+    <text>NCHU</text>
   </view>
+
+  <!-- 这里写的是滚动图 -->
+  <view>
+    <scroll-view class="nav" scroll-x>
+      <!-- 学院列表 -->
+      <view class="nav_item {{index==currentindex?'active':''}}" wx:for="{{collegeList}}" wx:key="id">
+
+        <view class="nav_display" bindtap="clickCollege" data-index="{{index}}">
+          <image src="{{item.logo}}"  mode="widthFix"  ></image>
+          <text>{{item.name}}</text>
+        </view>
+
+      </view>
+    </scroll-view>
+  </view>
+
+
+</view>
+
+
+
+<!-- 这里我来移动之前写好的组件sort--这里是end -->
+
+
+
+
+
+
+
+    <!-- </view> -->
+</view>
+ 
+
   
 </view>

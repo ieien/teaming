@@ -5,9 +5,11 @@
       <!-- 这里是公告的图标处 -->
       <view class="icon">
         <view class="part">
-          <image src="{{post.avatar}}" mode="widthFix"></image>
+        <view class="change">
+          <image src="{{post.avatar}}" mode="widthFix" class="circle"></image>
+          </view>
           <view class="id">
-            <text>{{post.user_name}}</text>
+            <text class="name">{{post.user_name}}</text>
             <text class="_id">{{post.college_name}}</text>
           </view>
         </view>
@@ -16,7 +18,7 @@
         <view class="part">
           <image src="{{post.com_logo}}" mode="widtFix"></image>
           <view class="id">
-            <text>{{post.com_name}}</text>
+            <text class="name">{{post.com_name}}</text>
             <text class="_id">{{post.level}}</text>
           </view>
         </view>

@@ -1,144 +1,115 @@
-/* pages/user/userDetails/userDetails.wxss */
-
-.view {
+.view{
   height: 100vh;
-  width: 100%;
+  width: 100vh;
   display: flex;
   flex-direction: column;
   background-color: rgba(223, 221, 218, 1);
 }
-
-.view1 {
-  height: 240rpx;
+.view1{
+  height: 250rpx;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   background-color: white;
 }
-
-.view1a {
-  height: 170rpx;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-}
-
-.view1b {
-  margin-left: 20rpx;
-  height: 50rpx;
+.view1a{
+  height: 200rpx;
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-direction: row;
   background-color: white;
 }
-
-.view1aa {
+.view1b{
+  background-color:  white ;
+}
+.grap{
+  width: 100vh;
+  height: 40rpx;
+  background-color: white;
+}
+.view1aa{
   height: 170rpx;
   width: 150rpx;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   justify-content: space-between;
 }
-
-.modify {
+.modify{
   margin-left: 20rpx;
-  margin-top: 10rpx;
+  margin-top:10rpx;
   height: 40rpx;
   width: 40rpx;
 }
-
-.wenben {
-  margin-left: 20rpx;
+.wenben{
+  margin-left: 40rpx;
   font-size: 32rpx;
-  margin-bottom: 20rpx;
+  font-weight: bold;
 }
-
-.wenzi {
+.wenzi{
   font-size: 32rpx;
   margin-top: 10rpx;
 }
-
-.touxiang {
+.touxiang{
   height: 156rpx;
   width: 156rpx;
   margin-left: 20rpx;
   margin-top: 10rpx;
   border-radius: 50%;
   overflow: hidden;
-  display: block;
-  border: 2px solid rgba(223, 221, 218, 1);
+  display: flex;
+  border: 2px solid  rgba(223, 221, 218, 1);  
 }
-
-.tavatar {
-  width: 156rpx;
-  height: 156rpx;
-  border-radius: 50%;
+.tavatar{
+  height: 100%;
+  width: 100%;
 }
-
-.nickname {
+.nickname{
   margin-top: 20rpx;
-  font-size: 40rpx;
+  font-size:40rpx;
 }
-
-.username {
-  font-size: 48rpx;
-}
-
-.college {
+.college{
+  
+  width:380rpx;
   font-size: 30rpx;
   margin-bottom: 20rpx;
 }
 
-.eye {
-  position: absolute;
-  top: 20rpx;
-  right: 20rpx;
-  height: 50rpx;
-  width: 50rpx;
-}
-
-.view2 {
+.view2{
   width: 100%;
-  height: 300rpx;
+  height: 250rpx;
   background-color: white;
   margin-top: 20rpx;
 }
-
-.information {
+.information{
   margin: 20rpx 10rpx;
-  font-size: 32rpx;
+  font-size:32rpx;
   width: 100%;
-  /* height: 230rpx; */
+  height: 230rpx;
   color: rgba(28, 26, 26, 1);
   text-align: left;
   font-family: Microsoft Yahei;
-  text-overflow:ellipsis;
-  word-wrap:break-word;
-}
 
-.view3 {
+}
+.view3{
   width: 100%;
-  height: 655rpx;
+  height: 650rpx;
   background-color: white;
   margin-top: 30rpx;
 }
-
-.view3a {
+.view3a{
   width: 100vh;
   height: 90rpx;
   display: flex;
   flex-direction: row;
 }
-
-.img {
+.img{
   margin: 10rpx 40rpx;
   width: 50rpx;
   height: 50rpx;
 }
-
-.line {
-  margin-left: 130rpx;
-  width: 620rpx;
-  border-top: 1px rgba(223, 221, 218, 1) solid;
+.line{
+    margin-left: 130rpx;
+    width: 620rpx;
+    border-top:1px rgba(223, 221, 218, 1) solid;
 }

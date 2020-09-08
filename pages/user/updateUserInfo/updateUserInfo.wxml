@@ -1,24 +1,34 @@
 <!--pages/user/updateUserInfo/updateUserInfo.wxml-->
 <!-- 用户注册和更新信息的页面 -->
 
-<view>
+<view class='content'>
   <form bindsubmit="formSubmit" bindreset="formReset">
-
+    
     <!-- 设置头像 -->
-      <image class="userinfo-avatar" src="{{avatar}}" mode="cover"></image>
+      <!-- <image class="userinfo-avatar" src="{{avatar}}" mode="cover"></image>
       <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserAvatar"> 获取微信头像 </button>
-      <input name="avatar" hidden="false" value="{{avatar}}" />
+      <input name="avatar" hidden="false" value="{{avatar}}" /> -->
+
+  <view class='nav'>
+    <view class='top'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='nickname'>
+      <open-data type="userNickName"></open-data> 
+    </view>
+    <button class="btn2" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserAvatar"> 获取微信头像 </button>
+  </view>
 
     <!-- 用户姓名输入 -->
-    <view class="secion">
-      <view class="section__title">姓名</view>
-      <input name="userName" placeholder="输入真实姓名可以让别人快速了解你哦" value="{{userInfo.userName}}" maxlength="10"/>
+    <view class="item">
+      <view class="left">姓名</view>
+      <input class="right" name="userName" placeholder="输入真实姓名可以让别人快速了解你哦" value="{{userInfo.userName}}" maxlength="10"/>
     </view>
 
     <!-- 选择性别 -->
-    <view class="section section_gap">
-      <view class="section__title">性别</view>
-      <radio-group name="sex">
+    <view class="item">
+      <view class="ji">性别</view>
+      <radio-group name="sex" class="">
         <label>
           <radio value="男" />男</label>
         <label>
@@ -27,9 +37,9 @@
     </view>
 
     <!-- 选择年级 -->
-    <view class="section section_gap">
-      <view class="section__title">年级</view>
-      <radio-group name="grade">
+    <view class="item_ji">
+      <view class="li">年级</view>
+      <radio-group name="grade" class="">
         <label>
           <radio value="大一" />大一</label>
         <label>
@@ -44,52 +54,58 @@
           <radio value="研二" />研二</label>
         <label>
           <radio value="研三" />研三</label>
-        <label>
-          <radio value="研四" />研四</label>
       </radio-group>
     </view>
-
+     <!-- 选择年级，普通选择器
+      <view class="item_xue">
+      <view class="">年级：</view>
+      <picker class="" bindchange="bindPickerChange" value="{{index}}" range="{{gradeList}}" range-key="name">
+        <view>{{gradeList[index].name}}</view>
+        <input name="grade" hidden="false" value="{{gradeList[index].name}}" />
+      </picker>
+    </view> -->
     <!-- 选择学院，普通选择器 -->
-    <view class="section">
-      <view class="section__title">学院：</view>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{collegeList}}" range-key="name">
+    <view class="item_xue">
+      <view class="">学院：</view>
+      <picker class="" bindchange="bindPickerChange" value="{{index}}" range="{{collegeList}}" range-key="name">
         <view>{{collegeList[index].name}}</view>
         <!-- input不显示，只为向表单提交数据 -->
         <input name="college" hidden="false" value="{{collegeList[index].name}}" />
       </picker>
     </view>
 
-    <!-- 输入参加过的比赛 -->
-    <view class="secion">
-      <view class="section__title">参加过的比赛或项目</view>
-      <input name="experience" placeholder="在此展示自己的职业历程吧" value="{{userInfo.experience}}" maxlength="50"/>
-    </view>
-
     <!-- qq -->
-    <view class="secion">
-      <view class="section__title">QQ</view>
-      <input name="qq" placeholder="" value="{{userInfo.qq}}" maxlength="13" type="number" />
+    <view class="item">
+      <view class="left">QQ:</view>
+      <input class="right" name="qq" placeholder="" value="{{userInfo.qq}}" maxlength="13" type="number" />
     </view>
     <!-- 微信 -->
-    <view class="secion">
-      <view class="section__title">微信</view>
-      <input name="weixin" placeholder="" value="{{userInfo.weixin}}" maxlength="25"/>
+    <view class="item">
+      <view class="left">微信:</view>
+      <input class="right" name="weixin" placeholder="" value="{{userInfo.weixin}}" maxlength="25"/>
     </view>
     <!-- 电话 -->
-    <view class="secion">
-      <view class="section__title">电话</view>
-      <input name="tel" placeholder="" value="{{userInfo.tel}}" type="number" maxlength="15"/>
+    <view class="item">
+      <view class="left">电话:</view>
+      <input class="right" name="tel" placeholder="" value="{{userInfo.tel}}" type="number" maxlength="15"/>
+    </view>
+    <!-- 输入参加过的比赛 -->
+    <view class="item">
+      <view class="left">项目经历：</view>
+      <input class="right" name="experience" placeholder="在此展示自己的职业历程吧" value="{{userInfo.experience}}" maxlength="50"/>
     </view>
 
     <!-- 个人详细介绍 -->
-    <view class="secion">
-      <view class="section__title">个人详细介绍</view>
-      <textarea name="introduction" placeholder="还有要补充的在这里说吧" rows="5" value="{{userInfo.introduction}}" maxlength="150"/>
+    <view class="item_self">
+      <view class="self">个人详细介绍:\n</view>
+      <view>
+      <textarea  name="introduction" placeholder="还有要补充的在这里说吧" rows="5" value="{{userInfo.introduction}}" maxlength="150"/>
+      </view>
     </view>
 
     <!-- 确定和重置按钮 -->
     <view class="btn-area">
-      <button formType="submit">确定</button>
+      <button class="btn1"  hover-class="bg_red" formType="submit">确定</button>
     </view>
 
   </form>

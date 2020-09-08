@@ -1,4 +1,3 @@
-/* pages/college/index/index.wxss */
 page{
   background:#DFDDDA 100%; 
 }
@@ -39,6 +38,7 @@ width: 100%;
   height: 150rpx;
   border-radius: 100%;
   position: absolute;
+  /* overflow: hidden; */
 }
 .name_college{
   margin-top: 70rpx;
@@ -59,23 +59,27 @@ width: 100%;
   flex-direction: row;
   background-color: white;
   border-top: 1rpx solid rgb(170, 170, 170,1);
+  border-right: 2rpx solid gray;
+  border-left: 2rpx solid gray;
 }
 .left_txt{ 
-  margin-top: 20rpx;
-   margin-bottom: 20rpx;
   text-align: center;
+  height: 70rpx;
   font-size: 35rpx;
-  width: 50%;
+  line-height: 35rpx;
+  padding-top: 20rpx;
+  width: 49%;
   border-right: 2rpx solid gray;
 }
 
 .rigth_txt{
-margin-top: 20rpx;
-margin-bottom: 20rpx;
-text-align: center;
-font-size: 35rpx;
-width: 50%;
-border-left: 2rpx solid gray;
+  padding-top: 20rpx;
+  height: 70rpx;
+  line-height: 35rpx;
+  text-align: center;
+  font-size: 35rpx;
+  width: 50%;
+  border-left: 2rpx solid gray;
 }
 
 .blank{

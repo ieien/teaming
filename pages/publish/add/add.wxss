@@ -147,7 +147,7 @@ page {
   position: absolute;
   top: 960rpx;
   width: 100%;
-  left: 2rpx;
+  left: 160rpx;
   height: 72rpx;
   border-radius: 10rpx;
   background-color: rgba(37, 155, 36, 1);

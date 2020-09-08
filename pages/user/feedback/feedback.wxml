@@ -1,10 +1,2 @@
-<!--pages/user/feedback/feedback.wxml-->
-<view class="view1"></view>
-<view class="view3"></view>
-<view class="view2">这里可以选择选择你反馈的内容类别哦</view>
-<view class="line"></view>
-<button class="bt1">Bug反馈</button>
-<button class="bt2">功能需求</button>
-<button class="bt3">吐槽</button>
-<textarea class="tx" value="在这里写下你想告诉我们的哦~"></textarea>
-<button class="bt4">提交反馈</button>
+
+<button class="select2" open-type='feedback'>点击我-立即去反馈</button>

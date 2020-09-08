@@ -1,6 +1,3 @@
-// pages/college/index/index.js
-// 学院详情
-
 const app = getApp();
 
 Page({
@@ -19,8 +16,10 @@ Page({
     haveMore: true, //表示还有更多数据（还可上拉页面）
     postList: [], //帖子列表
     isThisCollege: true, //是否是本学院的帖子（意向本学院就是非本学院）
-    left: "rgb(210, 200, 230)", //左边按钮的颜色
+    left: "rgba(211, 211, 211,0.6)", //左边按钮的颜色
     right: "white",  //右边按钮的颜色
+    left_color:"rgb(121 ,205 ,205)",
+    right_color:"black",
   },
 
   //跳转到学院比赛列表页面
@@ -84,6 +83,7 @@ Page({
         } else {
           console.log('查询失败');
         }
+        wx.stopPullDownRefresh();
       }//success
     })//request
   },
@@ -103,8 +103,10 @@ Page({
         postList: [],
         isThisCollege: true,
         page: 1,
-        left: "rgb(210, 200, 230)",
-        right: "white"
+        left: "rgba(211, 211, 211,0.6)",
+        right: "white",
+        left_color: "rgb(121 ,205 ,205)",
+        right_color: "black",
       })
       this.getPosts();
     }
@@ -120,7 +122,9 @@ Page({
         isThisCollege: false,
         page: 1,
         left: "white",
-        right: "rgb(210, 200, 230)"
+        right: "rgba(211, 211, 211,0.6)",
+        left_color: "black",
+        right_color: "rgb(121 ,205 ,205)",
       })
       this.getPosts();
     } else {
@@ -233,3 +237,21 @@ Page({
     }, 0)
   }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -23,6 +23,7 @@ Page({
    * 将发布的信息上传至服务器，并判断是否提交成功
    */
   updateUserInfo: function (userInfoForm) {
+    console.log(userInfoForm);
     const _this = this;
     wx.request({
       url: 'https://teaming.malateam.cn/src/update_user_info.php',
@@ -30,7 +31,7 @@ Page({
         is_sign_up: this.data.is_sign_up, //注册信息 or 更新信息
         openid: app.globalData.openid,    //用户openid
         userName: userInfoForm.userName,  //用户姓名
-        avatar: userInfoForm.avatar,  //头像
+        avatar: _this.data.avatar,  //头像
         sex: userInfoForm.sex,   //性别
         grade: userInfoForm.grade,  //年级
         college: userInfoForm.college,  //学院
@@ -49,7 +50,7 @@ Page({
         // 服务器端更新成功，此处更新全局变量
         if (res.data.code === 0) { 
           app.globalData.userInfo.userName = userInfoForm.userName;
-          app.globalData.userInfo.avatar = userInfoForm.avatar;
+          app.globalData.userInfo.avatar = _this.data.avatar;
           app.globalData.userInfo.sex = userInfoForm.sex;
           app.globalData.userInfo.grade = userInfoForm.grade;
           app.globalData.userInfo.college = userInfoForm.college;
@@ -134,6 +135,7 @@ Page({
     this.setData({
       avatar: e.detail.userInfo.avatarUrl,
     })
+    console.log(this.data.avatar);
   },
 
 

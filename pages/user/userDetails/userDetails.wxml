@@ -3,7 +3,7 @@
   <view class="view1">
     <view class="view1a">
       <view class="touxiang">
-        <image class="tavatar" src="{{userInfo.avatar}}"></image>
+        <image class="tavatar" src="{{userInfo.avatar}}"  mode="aspectFit"></image>
       </view>
       <view class="view1aa">
         <view class="nickname">
@@ -11,19 +11,28 @@
         </view>
         <text class="college">{{userInfo.college}}</text>
       </view>
-      <image class="eye" src="/image/eye.png"></image>
+  
     </view>
-    <view class="view1b">
-      <navigator url="../updateUserInfo/updateUserInfo?id=1&is_sign_up=false" hover-class="navigator-hover">
-        <image class="modify" src="/image/modify.png"></image>
-        <text class="wenben">修改个人信息</text>
-      </navigator>
-    </view>
+
+        <!-- <view class="view1b">
+              <navigator url="../updateUserInfo/updateUserInfo?id=1&is_sign_up=false" hover-class="navigator-hover">
+              <image class="modify" src="/image/modify.png"></image>
+              <text class="wenben">修改个人信息</text>
+            </navigator>
+          </view> -->
   </view>
   <view class="view2">
     <textarea class="information" value="{{userInfo.introduction}}" disabled="true" auto-auto-height="true"></textarea>
   </view>
+         
   <view class="view3">
+         <view class="view1b">
+              <navigator url="../updateUserInfo/updateUserInfo?id=1&is_sign_up=false" hover-class="navigator-hover">
+              <image class="modify" src="/image/modify.png"></image>
+              <text class="wenben">修改个人信息</text>
+            </navigator>
+          </view>
+     
     <view class="view3a">
       <image class="img" src="/image/experience.png"></image>
       <view class="wenzi">{{userInfo.experience}}</view>

@@ -1,81 +1,50 @@
 /* pages/user/about/about.wxss */
 .view1{
   position: absolute;
-  left: 0px;
-top: 0px;
-width: 100%;
-height: 100%;
-background-color: rgba(229, 229, 229, 1);
-}
-.img{
+  left: 0rpx;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(229, 229, 229, 1);
+  display: flex;
+  flex-direction: column;
+  }
+  .viewp{
+  position: relative;
+  top: 360rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(229, 229, 229, 1) ;
+  }
+  .img{
   position: absolute;
-  left: 134px;
-top: 36px;
-width: 80px;
-height: 80px;
-border-radius: 0px;
-}
-.view2{
-  position: absolute;
-  left: 42px;
-top: 138px;
-width: 280px;
-height: 100px;
-line-height: 20px;
-color: rgba(136, 136, 136, 1);
-font-size: 14px;
-text-align: left;
-font-family: Microsoft Yahei;
-border: 2px solid rgba(0, 150, 136, 1);
-background-color: rgba(255, 255, 255, 1);
-}
-.view3{
-  position: absolute;
- left: 46px;
-top: 254px;
-width: 72px;
-height: 21px;
-color: rgba(16, 16, 16, 1);
-font-size: 18px;
-text-align: left;
-font-family: 方正圆体-粗;
-}
-.view4{
-  position: absolute;
-  left: 44px;
-top: 279px;
-width: 280px;
-height: 100px;
-line-height: 20px;
-color: rgba(136, 136, 136, 1);
-font-size: 14px;
-text-align: left;
-font-family: Microsoft Yahei;
-border: 2px solid rgba(0, 150, 136, 1);
-background-color: rgba(255, 255, 255, 1);
-}
-.view5{
-  position: absolute;
- left: 49px;
-top: 395px;
-width: 72px;
-height: 21px;
-color: rgba(16, 16, 16, 1);
-font-size: 18px;
-text-align: left;
-font-family: 方正圆体-粗;
-}
-.view6{
-  position: absolute;
-  left: 47px;
-top: 420px;
-width: 280px;
-height: 126px;
-line-height: 20px;
-color: rgba(136, 136, 136, 1);
-font-size: 14px;
-text-align: left;
-font-family: Roboto;
-border: 2px solid rgba(0, 150, 136, 1);
-background-color: rgba(255, 255, 255, 1);
-}
+  left: 280rpx;
+  top: 90rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+  }
+  .view2{
+  margin-left: 50rpx;
+  width: 640rpx;
+  height: 250rpx;
+  line-height: 50rpx;
+  color: rgba(136, 136, 136, 1);
+  font-size: 30rpx;
+  text-align: left;
+  font-family: Microsoft Yahei;
+  border: 8rpx solid rgba(0, 150, 136, 1);
+  background-color: rgba(255, 255, 255, 1);
+  }
+  .view3{
+  position: relative;
+  left: 30rpx;
+  width: 200rpx;
+  height: 50rpx;
+  color: rgba(16, 16, 16, 1);
+  font-size: 40rpx;
+  text-align: left;
+  font-family: 方正圆体-粗;
+  margin: 20rpx 20rpx;
+  }
+  

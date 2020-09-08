@@ -41,24 +41,42 @@
   border-right: 1px solid #BBBBBB;
 }
 
+.box_left_content{
+  width: 200rpx;
+  height: 120rpx;
+  /* border: 1px solid black; */
+  margin-top:32rpx;
+  margin-left: 150rpx;
+  font-size: 30rpx;
+}
+
+.box_right_content{
+  width: 200rpx;
+  height: 120rpx;
+  /* border: 1px solid black; */
+  margin-top:32rpx;
+  margin-left: 150rpx;
+  font-size: 30rpx;
+}
+
 .touxiang{
   float: left;
   height: 120rpx;
   width: 120rpx;
-  padding-left: 15rpx;
-  padding-top: 32rpx;
-}
-.name{
-  margin-left: 180rpx;
+  margin-left:15rpx;
   margin-top: 32rpx;
+  border-radius: 250px;
+  overflow: hidden;
+}
+
+.name{
   font-size: 30rpx;
-  margin-bottom: 16rpx;
+  margin-bottom: 20rpx;
 }
 
 .college{
   font-size: 28rpx;
   color: #B5B1B1;
-  margin-left: 42rpx;
 }
 
 .Competition_information{
@@ -72,17 +90,17 @@
   float: left;
   height: 140rpx;
   width: 140rpx;
+  border-radius: 250px;
+  overflow: hidden;
 } 
 .match{
-  margin-top: 20rpx;
-  font-size: 40rpx;
+  font-size: 30rpx;
   font-weight: 600;
-  margin-bottom: 22rpx;
+  margin-bottom: 20rpx;
 }
 .matchtype{
   font-size: 28rpx;
   color: #B5B1B1;
-  margin-left: 60rpx;
 }
 
 .second_box{
@@ -140,7 +158,7 @@
 .college{
   width: 88%;
   height: 25%;
-  border-bottom: 2rpx solid rgba(170, 170, 170, 1);
+  /* border-bottom: 2rpx solid rgba(170, 170, 170, 1); */
   display: flex;
   align-items: center;
 }

@@ -89,6 +89,7 @@ Page({
         } else {
           // 数据库操作失败
         }
+        wx.stopPullDownRefresh();
       }//success
     })//request
   },

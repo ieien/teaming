@@ -1,81 +1,15 @@
-/* pages/user/feedback/feedback.wxss */
-.view1{
-  position: absolute;
-  left: 0px;
-top: 0px;
-width: 100%;
-height:100%;
-background-color: rgba(229, 229, 229, 1);
-}
-.bt1{
-  position: absolute;
-  left: 6px;
-top: 12px;
-width: 100px;
-height: 40px;
-line-height: 20px;
-border-radius: 20px 20px 20px 20px;
-background-color: rgba(0, 150, 136, 1);
-color: rgba(16, 16, 16, 1);
-font-size: 14px;
-text-align: center;
-font-family: Roboto;
-border: 2px solid rgba(0, 150, 136, 1);
-}
-.bt2{
-   position: absolute;
-left: 123px;
-top: 12px;
-width: 100px;
-height: 40px;
-line-height: 20px;
-border-radius: 20px 20px 20px 20px;
-color: rgba(0, 150, 136, 1);
-font-size: 14px;
-text-align: center;
-font-family: Roboto;
-border: 2px solid rgba(0, 150, 136, 1);
-}
-.bt3{
-   position: absolute;
-  left: 236px;
-top: 12px;
-width: 100px;
-height: 40px;
-line-height: 20px;
-border-radius: 20px 20px 20px 20px;
-color: rgba(16, 16, 16, 1);
-font-size: 14px;
-text-align: center;
-font-family: Roboto;
-border: 2px solid rgba(0, 150, 136, 1);
-}
-.bt4{
-  position: absolute;
-  left: 249px;
-top: 507px;
-width: 90px;
-height: 30px;
-border-radius: 14px 14px 14px 14px;
-background-color: rgba(0, 150, 136, 1);
-color: rgba(255, 255, 255, 1);
-font-size: 14px;
-text-align: center;
-font-family: Microsoft Yahei;
-border: 2px solid rgba(0, 150, 136, 1);
-}
-.tx{
-  position: absolute;
-  left: 34px;
-top: 90px;
-width: 280px;
-height: 223px;
-line-height: 20px;
-background-color: rgba(255, 255, 255, 1);
-border-radius: 20px 20px 20px 20px;
-color: rgba(136, 136, 136, 1);
-font-size: 14px;
-text-align: left;
-font-family: Microsoft Yahei;
-border: 1px solid rgba(0, 150, 136, 1);
+.select2 {
+  position: fixed;
+  top: 400rpx;
+ 
+  right: 150rpx;
+  background-color: rgba(0, 150, 136, 1);
+  width: 100rpx;
+  height: 60rpx;
+  border-radius: 20px 20px 20px 20px;
+  color: white;
+  font-size: 30rpx;
+  text-align: center;
+  font-family: Roboto;
+  border: 2px solid rgba(0, 150, 136, 1);
 }
